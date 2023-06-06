@@ -38,7 +38,7 @@ class DireccionesSearch extends Direcciones
      *
      * @return ActiveDataProvider
      */
-    public function search($params, $id_cliente)
+    public function search($id_cliente)
     {
         $query = Direcciones::find()->where(['id_cliente' => $id_cliente]);
 
@@ -48,7 +48,7 @@ class DireccionesSearch extends Direcciones
             'query' => $query,
         ]);
 
-        $this->load($params);
+       
 
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails

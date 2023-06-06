@@ -77,7 +77,21 @@ class Direcciones extends \yii\db\ActiveRecord
             [['id_municipio'], 'exist', 'skipOnError' => true, 'targetClass' => Municipios::class, 'targetAttribute' => ['id_municipio' => 'id_municipio']],
             [['id_usuario_ing'], 'exist', 'skipOnError' => true, 'targetClass' => Usuarios::class, 'targetAttribute' => ['id_usuario_ing' => 'id_usuario']],
             [['id_usuario_mod'], 'exist', 'skipOnError' => true, 'targetClass' => Usuarios::class, 'targetAttribute' => ['id_usuario_mod' => 'id_usuario']],
+            ['principal', 'validatePrincipal', 'on' => ['create', 'update']],
         ];
+    }
+
+    public function validatePrincipal($attribute, $params)
+    {
+        // Verificar si ya existe otra dirección con el mismo cliente y principal igual a 1
+        $existingAddress = Direcciones::findOne([
+            'id_cliente' => $this->id_cliente,
+            'principal' => 1,
+        ]);
+
+        if ($this->principal && $existingAddress && $existingAddress->id_direccion != $this->id_direccion) {
+            $this->addError($attribute, 'Ya existe otra dirección principal para este cliente.');
+        }
     }
 
     /**

@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /** @var yii\web\View $this */
 /** @var app\modules\compras\models\Proveedores $model */
 
-$this->title = $model->id_proveedor;
-$this->params['breadcrumbs'][] = ['label' => 'Listado', 'url' => ['index']];
+$this->title = 'Detalle';
+$this->params['breadcrumbs'][] = ['label' => 'Listado de proveedores', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>

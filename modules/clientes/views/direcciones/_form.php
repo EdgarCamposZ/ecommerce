@@ -115,7 +115,8 @@ use yii\helpers\Url;
                             $model->isNewRecord ? '<i class="fa fa-save"></i> Guardar' : '<i class="fa fa-save"></i> Actualizar',
                             ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary', 'name' => 'submit-button']
                         ) ?>
-                        <?= Html::a('<i class="fa fa-ban"></i> Cancelar', ['view', 'id_cliente' => $model->id_cliente], ['class' => 'btn btn-danger']) ?>
+                        <?= Html::a('<i class="fa fa-ban"></i> Cancelar', $model->isNewRecord ? ['clientes/index'] : ['view', 'id_direccion' => $model->id_direccion], ['class' => 'btn btn-danger']) ?>
+
                     </div>
                 </form>
                 <?php ActiveForm::end(); ?>

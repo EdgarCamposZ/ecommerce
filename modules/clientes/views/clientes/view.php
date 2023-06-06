@@ -20,11 +20,11 @@ $this->params['breadcrumbs'][] = ['label' => 'Listado', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 
-                // Contar las direcciones del cliente
-                $direccionesCount = Direcciones::find()->where(['id_cliente' => $model->id_cliente])->count();
+// Contar las direcciones del cliente
+$direccionesCount = Direcciones::find()->where(['id_cliente' => $model->id_cliente])->count();
 
-                // Verificar si el cliente tiene menos de 6 direcciones
-                $permitirCrearDireccion = ($direccionesCount < 6);
+// Verificar si el cliente tiene menos de 6 direcciones
+$permitirCrearDireccion = ($direccionesCount < 6);
 
 ?>
 
@@ -142,17 +142,41 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <?= GridView::widget([
                     'dataProvider' => $dataProvider,
-                    'filterModel' => $searchModel,
+                    'filterModel' => null, // Quitamos el filtro de búsqueda
                     'columns' => [
                         ['class' => 'kartik\grid\SerialColumn'],
                         'contacto',
                         'telefono',
-                        'direccion:ntext',
+                        [
+                            'attribute' => 'direccion',
+                            'format' => 'raw',
+                            'value' => function ($model) {
+                                return $model->direccion;
+                            },
+                        ],
+                        [
+                            'attribute' => 'principal',
+                            'format' => 'raw',
+                            'value' => function ($model) {
+                                $text = $model->principal ? 'Principal' : 'Otra dirección';
+                                $class = $model->principal ? 'text-info' : 'text';
+                                return '<span class="' . $class . '">' . $text . '</span>';
+                            },
+                        ],
+                        [
+                            'attribute' => 'estado',
+                            'format' => 'raw',
+                            'value' => function ($model) {
+                                $icon = $model->estado ? '<span class="fa fa-check text-success"></span>' : '<span class="fa fa-ban text-danger"></span>';
+                                return $icon;
+                            },
+                        ],
                         [
                             'class' => 'kartik\grid\ActionColumn',
+                            'header' => 'Acciones', // Cambiamos el texto en el encabezado
                             'template' => '{view} {update} {delete}',
                             'urlCreator' => function ($action, $model, $key, $index) {
-                                return Yii::$app->urlManager->createUrl(['clientes/direcciones/' . $action, 'id' => $model->id_direccion]);
+                                return Yii::$app->urlManager->createUrl(['clientes/direcciones/' . $action, 'id_direccion' => $model->id_direccion]);
                             },
                             'buttons' => [
                                 'view' => function ($url, $model, $key) {
@@ -172,7 +196,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 'delete' => function ($url, $model, $key) {
                                     return Html::a('<span class="fas fa-trash"></span>', $url, [
                                         'title' => Yii::t('yii', 'Delete'),
-                                        'data-confirm' => Yii::t('yii', 'Estas seguro de eliminar este registro?'),
+                                        'data-confirm' => Yii::t('yii', 'Estás seguro de eliminar este registro?'),
                                         'data-method' => 'post',
                                         'data-pjax' => '0',
                                         'class' => 'btn btn-danger btn-xs',
@@ -190,6 +214,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     'showFooter' => false,
                     'showOnEmpty' => true,
                 ]); ?>
+
+
             </div>
         </div>
     </div>

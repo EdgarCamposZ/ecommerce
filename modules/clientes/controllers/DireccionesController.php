@@ -74,6 +74,7 @@ class DireccionesController extends Controller
     public function actionCreate($id_cliente)
     {
         $model = new Direcciones();
+        $model->scenario = 'create';
         $grid = new ActiveDataProvider(['query' => Direcciones::find()->where(['id_cliente' => $id_cliente])]);
 
         if ($model->load($this->request->post())) {
@@ -88,7 +89,7 @@ class DireccionesController extends Controller
 
                 $bitacora = new Bitacora();
                 $bitacora->id_registro = $model->id_direccion;
-                $bitacora->controlador = $controller = Yii::$app->controller->id;
+                $bitacora->controlador = Yii::$app->controller->id;
                 $bitacora->accion = Yii::$app->controller->action->id;
                 $bitacora->data_original = $data_original;
                 $bitacora->data_modificada = NULL;
@@ -100,19 +101,24 @@ class DireccionesController extends Controller
                 }
 
                 $transaction->commit();
+
+                Yii::$app->session->setFlash('success', "Registro creado exitosamente.");
+                return $this->redirect(['view', 'id_direccion' => $model->id_direccion]);
             } catch (Exception $e) {
                 $transaction->rollBack();
                 $controller = Yii::$app->controller->id . "/" . Yii::$app->controller->action->id;
                 CoreController::getErrorLog(\Yii::$app->user->identity->id, $e, $controller);
-                return $this->redirect(['index']);
-            }
 
-            Yii::$app->session->setFlash('success', "Registro creado exitosamente.");
-            return $this->redirect(['view', 'id_direccion' => $model->id_direccion]);
+                // Mostrar mensaje de advertencia al usuario
+                Yii::$app->session->setFlash('warning', "Hubo un error al guardar el registro. Por favor, verifica los datos e intenta nuevamente.");
+
+                return $this->render('create', ['model' => $model, 'grid' => $grid]);
+            }
         } else {
             return $this->render('create', ['model' => $model, 'grid' => $grid]);
         }
     }
+
 
     /**
      * Updates an existing Direcciones model.
@@ -124,6 +130,7 @@ class DireccionesController extends Controller
     public function actionUpdate($id_direccion)
     {
         $model = $this->findModel($id_direccion);
+        $model->scenario = 'update';
 
         if ($model->load($this->request->post())) {
             $transaction = Yii::$app->db->beginTransaction();
@@ -149,20 +156,24 @@ class DireccionesController extends Controller
                 }
 
                 $transaction->commit();
+
+                Yii::$app->session->setFlash('success', "Registro actualizado exitosamente.");
+                return $this->redirect(['view', 'id_direccion' => $model->id_direccion]);
             } catch (Exception $e) {
                 $transaction->rollBack();
                 $controller = Yii::$app->controller->id . "/" . Yii::$app->controller->action->id;
                 CoreController::getErrorLog(\Yii::$app->user->identity->id, $e, $controller);
-                return $this->redirect(['index']);
+
+                // Mostrar mensaje de advertencia al usuario
+                Yii::$app->session->setFlash('warning', "Hubo un error al actualizar el registro. Por favor, verifica los datos e intenta nuevamente.");
+
+                return $this->render('update', ['model' => $model]);
             }
-            Yii::$app->session->setFlash('success', "Registro actualizado exitosamente.");
-            return $this->redirect(['view', 'id_direccion' => $model->id_direccion]);
         } else {
-            return $this->render('update', [
-                'model' => $model
-            ]);
+            return $this->render('update', ['model' => $model]);
         }
     }
+
 
     /**
      * Deletes an existing Direcciones model.
@@ -205,7 +216,7 @@ class DireccionesController extends Controller
             return $this->redirect(['index']);
         }
         Yii::$app->session->setFlash('danger', "Registro actualizado exitosamente.");
-        return $this->redirect(['index']);
+        return $this->redirect(['clientes/view', 'id_cliente' => $model->id_cliente]);
     }
 
     /**
