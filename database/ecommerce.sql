@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 28, 2023 at 04:23 AM
+-- Generation Time: Jun 06, 2023 at 02:46 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -62,11 +62,12 @@ CREATE TABLE `auth_item` (
 --
 
 INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `created_at`, `updated_at`) VALUES
+('/clientes/*', 2, NULL, NULL, NULL, 1685560355, 1685560355),
+('/compras/*', 2, NULL, NULL, NULL, 1684633296, 1684633296),
 ('/debug/*', 2, NULL, NULL, NULL, 1677807204, 1677807204),
 ('/gii/*', 2, NULL, NULL, NULL, 1677807211, 1677807211),
 ('/gridview/*', 2, NULL, NULL, NULL, 1677807174, 1677807174),
 ('/productos/*', 2, NULL, NULL, NULL, 1681438950, 1681438950),
-('/productos/marcas/*', 2, NULL, NULL, NULL, 1682397010, 1682397010),
 ('/rbac/*', 2, NULL, NULL, NULL, 1677807195, 1677807195),
 ('/site/*', 2, NULL, NULL, NULL, 1677807256, 1677807256),
 ('/usuarios/*', 2, NULL, NULL, NULL, 1677807263, 1677807263),
@@ -91,13 +92,14 @@ CREATE TABLE `auth_item_child` (
 --
 
 INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
+('PermisoAdmin', '/clientes/*'),
+('PermisoAdmin', '/compras/*'),
 ('PermisoAdmin', '/debug/*'),
 ('PermisoAdmin', '/gii/*'),
 ('PermisoAdmin', '/gridview/*'),
 ('PermisoDemo', '/gridview/*'),
 ('PermisoAdmin', '/productos/*'),
 ('PermisoDemo', '/productos/*'),
-('PermisoAdmin', '/productos/marcas/*'),
 ('PermisoAdmin', '/rbac/*'),
 ('PermisoAdmin', '/site/*'),
 ('PermisoDemo', '/site/*'),
@@ -216,7 +218,39 @@ INSERT INTO `tbl_bitacora` (`id_bitacora`, `id_registro`, `controlador`, `accion
 (76, 1, 'marcas', 'update', '\"{\\n    \\\"id_marca\\\": 1,\\n    \\\"nombre\\\": \\\"Nintendo\\\",\\n    \\\"descripcion\\\": \\\"<p>\\\\\\\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\\\\r\\\\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \\\\r\\\\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \\\\r\\\\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \\\\r\\\\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \\\\r\\\\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \\\\r\\\\nmollit anim id est laborum.\\\\\\\"<\\\\/p>\\\",\\n    \\\"imagen\\\": \\\"\\\\/marcas\\\\/YdfLjx5YoK5iVX7OywIN33kzU7zXVFQK.png\\\",\\n    \\\"fecha_ing\\\": \\\"2023-04-11 19:24:34\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-04-26 00:07:05\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-04-26 00:21:07'),
 (77, 1, 'marcas', 'update', '\"{\\n    \\\"id_marca\\\": 1,\\n    \\\"nombre\\\": \\\"Nintendo\\\",\\n    \\\"descripcion\\\": \\\"<p>\\\\\\\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\\\\r\\\\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \\\\r\\\\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \\\\r\\\\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \\\\r\\\\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \\\\r\\\\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \\\\r\\\\nmollit anim id est laborum.\\\\\\\"<\\\\/p>\\\",\\n    \\\"imagen\\\": \\\"\\\\/marcas\\\\/YdfLjx5YoK5iVX7OywIN33kzU7zXVFQK.png\\\",\\n    \\\"fecha_ing\\\": \\\"2023-04-11 19:24:34\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-04-26 00:21:07\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"imagen\\\": null,\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-04-26 00:21:32'),
 (78, 1, 'marcas', 'update', '\"{\\n    \\\"id_marca\\\": 1,\\n    \\\"nombre\\\": \\\"Nintendo\\\",\\n    \\\"descripcion\\\": \\\"<p>\\\\\\\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\\\\r\\\\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \\\\r\\\\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \\\\r\\\\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \\\\r\\\\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \\\\r\\\\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \\\\r\\\\nmollit anim id est laborum.\\\\\\\"<\\\\/p>\\\",\\n    \\\"imagen\\\": null,\\n    \\\"fecha_ing\\\": \\\"2023-04-11 19:24:34\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-04-26 00:21:32\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"imagen\\\": \\\"\\\\/marcas\\\\/BsgdKIOgSGArLieqMkQt5_8TKeq72hyf.png\\\",\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-04-26 00:21:44'),
-(79, 1, 'marcas', 'update', '\"{\\n    \\\"id_marca\\\": 1,\\n    \\\"nombre\\\": \\\"Nintendo\\\",\\n    \\\"descripcion\\\": \\\"<p>\\\\\\\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\\\\r\\\\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \\\\r\\\\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \\\\r\\\\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \\\\r\\\\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \\\\r\\\\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \\\\r\\\\nmollit anim id est laborum.\\\\\\\"<\\\\/p>\\\",\\n    \\\"imagen\\\": \\\"\\\\/marcas\\\\/BsgdKIOgSGArLieqMkQt5_8TKeq72hyf.png\\\",\\n    \\\"fecha_ing\\\": \\\"2023-04-11 19:24:34\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-04-26 00:21:44\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"imagen\\\": \\\"\\\\/marcas\\\\/H7GVPtCQQJt_bS71Q-Oj1c2fAcyXwTsZ.png\\\",\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-04-26 00:23:14');
+(79, 1, 'marcas', 'update', '\"{\\n    \\\"id_marca\\\": 1,\\n    \\\"nombre\\\": \\\"Nintendo\\\",\\n    \\\"descripcion\\\": \\\"<p>\\\\\\\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\\\\r\\\\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \\\\r\\\\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \\\\r\\\\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \\\\r\\\\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \\\\r\\\\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \\\\r\\\\nmollit anim id est laborum.\\\\\\\"<\\\\/p>\\\",\\n    \\\"imagen\\\": \\\"\\\\/marcas\\\\/BsgdKIOgSGArLieqMkQt5_8TKeq72hyf.png\\\",\\n    \\\"fecha_ing\\\": \\\"2023-04-11 19:24:34\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-04-26 00:21:44\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"imagen\\\": \\\"\\\\/marcas\\\\/H7GVPtCQQJt_bS71Q-Oj1c2fAcyXwTsZ.png\\\",\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-04-26 00:23:14'),
+(80, 8, 'productos', 'update', '\"{\\n    \\\"id_producto\\\": 8,\\n    \\\"nombre\\\": \\\"Playstation 5\\\",\\n    \\\"sku\\\": \\\"ps5-2023uh414\\\",\\n    \\\"descripcion\\\": \\\"<p>PlayStation 5 (abreviada como PS5) es la quinta consola de videojuegos de sobremesa desarrollada por la empresa Sony Interactive Entertainment. Fue anunciada en el a\\\\u00f1o 2019 como la sucesora de la PlayStation 4, la PS5 se lanz\\\\u00f3 el 12 de noviembre de 2020 en Australia, Jap\\\\u00f3n, Nueva Zelanda, Estados Unidos, Canad\\\\u00e1, M\\\\u00e9xico y Corea del Sur, y en el resto de pa\\\\u00edses el 19 de noviembre de 2020. La PlayStation 5 junto con la Xbox Series X|S de Microsoft, lanzada el mismo mes, son parte de la novena generaci\\\\u00f3n de consolas de videojuegos.<br><\\\\/p>\\\",\\n    \\\"precio\\\": \\\"800.00\\\",\\n    \\\"id_categoria\\\": 1,\\n    \\\"id_sub_categoria\\\": 1,\\n    \\\"id_marca\\\": 2,\\n    \\\"fecha_ing\\\": null,\\n    \\\"id_usuario_ing\\\": null,\\n    \\\"fecha_mod\\\": null,\\n    \\\"id_usuario_mod\\\": null,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"descripcion\\\": \\\"<p><b>PlayStation 5 <\\\\/b>(abreviada como PS5) es la quinta consola de videojuegos de sobremesa desarrollada por la empresa Sony Interactive Entertainment. Fue anunciada en el a\\\\u00f1o 2019 como la sucesora de la PlayStation 4, la PS5 se lanz\\\\u00f3 el 12 de noviembre de 2020 en Australia, Jap\\\\u00f3n, Nueva Zelanda, Estados Unidos, Canad\\\\u00e1, M\\\\u00e9xico y Corea del Sur, y en el resto de pa\\\\u00edses el 19 de noviembre de 2020. La PlayStation 5 junto con la Xbox Series X|S de Microsoft, lanzada el mismo mes, son parte de la novena generaci\\\\u00f3n de consolas de videojuegos.<br><\\\\/p>\\\",\\n    \\\"id_categoria\\\": \\\"1\\\",\\n    \\\"id_sub_categoria\\\": \\\"1\\\",\\n    \\\"id_marca\\\": \\\"2\\\",\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-05-17 16:38:33'),
+(81, 8, 'productos', 'update', '\"{\\n    \\\"id_producto\\\": 8,\\n    \\\"nombre\\\": \\\"Playstation 5\\\",\\n    \\\"sku\\\": \\\"ps5-2023uh414\\\",\\n    \\\"descripcion\\\": \\\"<p><b>PlayStation 5 <\\\\/b>(abreviada como PS5) es la quinta consola de videojuegos de sobremesa desarrollada por la empresa Sony Interactive Entertainment. Fue anunciada en el a\\\\u00f1o 2019 como la sucesora de la PlayStation 4, la PS5 se lanz\\\\u00f3 el 12 de noviembre de 2020 en Australia, Jap\\\\u00f3n, Nueva Zelanda, Estados Unidos, Canad\\\\u00e1, M\\\\u00e9xico y Corea del Sur, y en el resto de pa\\\\u00edses el 19 de noviembre de 2020. La PlayStation 5 junto con la Xbox Series X|S de Microsoft, lanzada el mismo mes, son parte de la novena generaci\\\\u00f3n de consolas de videojuegos.<br><\\\\/p>\\\",\\n    \\\"precio\\\": \\\"800.00\\\",\\n    \\\"id_categoria\\\": 1,\\n    \\\"id_sub_categoria\\\": 1,\\n    \\\"id_marca\\\": 2,\\n    \\\"fecha_ing\\\": \\\"2023-05-16 17:40:53\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-05-17 16:38:33\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"id_categoria\\\": \\\"1\\\",\\n    \\\"id_sub_categoria\\\": \\\"1\\\",\\n    \\\"id_marca\\\": \\\"2\\\",\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-05-17 19:23:19'),
+(82, 8, 'productos', 'update', '\"{\\n    \\\"id_producto\\\": 8,\\n    \\\"nombre\\\": \\\"Playstation 5\\\",\\n    \\\"sku\\\": \\\"ps5-2023uh414\\\",\\n    \\\"descripcion\\\": \\\"<p><b>PlayStation 5 <\\\\/b>(abreviada como PS5) es la quinta consola de videojuegos de sobremesa desarrollada por la empresa Sony Interactive Entertainment. Fue anunciada en el a\\\\u00f1o 2019 como la sucesora de la PlayStation 4, la PS5 se lanz\\\\u00f3 el 12 de noviembre de 2020 en Australia, Jap\\\\u00f3n, Nueva Zelanda, Estados Unidos, Canad\\\\u00e1, M\\\\u00e9xico y Corea del Sur, y en el resto de pa\\\\u00edses el 19 de noviembre de 2020. La PlayStation 5 junto con la Xbox Series X|S de Microsoft, lanzada el mismo mes, son parte de la novena generaci\\\\u00f3n de consolas de videojuegos.<br><\\\\/p>\\\",\\n    \\\"precio\\\": \\\"800.00\\\",\\n    \\\"id_categoria\\\": 1,\\n    \\\"id_sub_categoria\\\": 1,\\n    \\\"id_marca\\\": 2,\\n    \\\"fecha_ing\\\": \\\"2023-05-16 17:40:53\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-05-17 19:23:19\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"id_categoria\\\": \\\"1\\\",\\n    \\\"id_sub_categoria\\\": \\\"1\\\",\\n    \\\"id_marca\\\": \\\"2\\\",\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-05-17 20:11:00'),
+(83, 2, 'proveedores', 'create', '\"{\\n    \\\"id_proveedor\\\": 2,\\n    \\\"codigo\\\": \\\"PVD-0002\\\",\\n    \\\"nombre\\\": \\\"Proveedor 2\\\",\\n    \\\"direccion\\\": \\\"<p>Lorem ipsun<\\\\/p>\\\",\\n    \\\"id_departamento\\\": \\\"12\\\",\\n    \\\"id_municipio\\\": \\\"216\\\",\\n    \\\"telefono\\\": \\\"32468900\\\",\\n    \\\"email\\\": \\\"proveedor2@proveedor.com\\\",\\n    \\\"fecha_ing\\\": \\\"2023-05-20 22:07:47\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-05-20 22:07:47\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', NULL, 1, '2023-05-20 22:07:47'),
+(84, 2, 'proveedores', 'update', '\"{\\n    \\\"id_proveedor\\\": 2,\\n    \\\"codigo\\\": \\\"PVD-0002\\\",\\n    \\\"nombre\\\": \\\"Proveedor 2\\\",\\n    \\\"direccion\\\": \\\"<p>Lorem ipsun<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 12,\\n    \\\"id_municipio\\\": 216,\\n    \\\"telefono\\\": \\\"32468900\\\",\\n    \\\"email\\\": \\\"proveedor2@proveedor.com\\\",\\n    \\\"fecha_ing\\\": \\\"2023-05-20 22:07:47\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-05-20 22:07:47\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"nombre\\\": \\\"Marielos\\\",\\n    \\\"direccion\\\": \\\"<p>Lorem ipsum editado<\\\\/p>\\\",\\n    \\\"id_departamento\\\": \\\"12\\\",\\n    \\\"id_municipio\\\": \\\"216\\\",\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-05-20 22:24:37'),
+(85, 2, 'proveedores', 'update', '\"{\\n    \\\"id_proveedor\\\": 2,\\n    \\\"codigo\\\": \\\"PVD-0002\\\",\\n    \\\"nombre\\\": \\\"Marielos\\\",\\n    \\\"direccion\\\": \\\"<p>Lorem ipsum editado<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 12,\\n    \\\"id_municipio\\\": 216,\\n    \\\"telefono\\\": \\\"32468900\\\",\\n    \\\"email\\\": \\\"proveedor2@proveedor.com\\\",\\n    \\\"fecha_ing\\\": \\\"2023-05-20 22:07:47\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-05-20 22:24:37\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"id_departamento\\\": \\\"12\\\",\\n    \\\"id_municipio\\\": \\\"216\\\",\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-05-20 22:25:28'),
+(86, 2, 'proveedores', 'update', '\"{\\n    \\\"id_proveedor\\\": 2,\\n    \\\"codigo\\\": \\\"PVD-0002\\\",\\n    \\\"nombre\\\": \\\"Marielos\\\",\\n    \\\"direccion\\\": \\\"<p>Lorem ipsum editado<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 12,\\n    \\\"id_municipio\\\": 216,\\n    \\\"telefono\\\": \\\"32468900\\\",\\n    \\\"email\\\": \\\"proveedor2@proveedor.com\\\",\\n    \\\"fecha_ing\\\": \\\"2023-05-20 22:07:47\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-05-20 22:25:28\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"id_departamento\\\": \\\"12\\\",\\n    \\\"id_municipio\\\": \\\"214\\\",\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-05-20 22:25:35'),
+(87, 2, 'proveedores', 'delete', '\"{\\n    \\\"id_proveedor\\\": 2,\\n    \\\"codigo\\\": \\\"PVD-0002\\\",\\n    \\\"nombre\\\": \\\"Marielos\\\",\\n    \\\"direccion\\\": \\\"<p>Lorem ipsum editado<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 12,\\n    \\\"id_municipio\\\": 214,\\n    \\\"telefono\\\": \\\"32468900\\\",\\n    \\\"email\\\": \\\"proveedor2@proveedor.com\\\",\\n    \\\"fecha_ing\\\": \\\"2023-05-20 22:07:47\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-05-20 22:25:35\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"estado\\\": 0\\n}\"', 1, '2023-05-20 22:28:45'),
+(88, 2, 'proveedores', 'update', '\"{\\n    \\\"id_proveedor\\\": 2,\\n    \\\"codigo\\\": \\\"PVD-0002\\\",\\n    \\\"nombre\\\": \\\"Marielos\\\",\\n    \\\"direccion\\\": \\\"<p>Lorem ipsum editado<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 12,\\n    \\\"id_municipio\\\": 214,\\n    \\\"telefono\\\": \\\"32468900\\\",\\n    \\\"email\\\": \\\"proveedor2@proveedor.com\\\",\\n    \\\"fecha_ing\\\": \\\"2023-05-20 22:07:47\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-05-20 22:28:45\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 0\\n}\"', '\"{\\n    \\\"id_departamento\\\": \\\"12\\\",\\n    \\\"id_municipio\\\": \\\"214\\\",\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-05-20 22:28:51'),
+(89, 1, 'compras', 'create', '\"{\\n    \\\"id_compra\\\": 1,\\n    \\\"codigo\\\": \\\"CMPR-00001\\\",\\n    \\\"num_factura\\\": \\\"42521\\\",\\n    \\\"id_proveedor\\\": \\\"1\\\",\\n    \\\"tipo_compra\\\": \\\"0\\\",\\n    \\\"fecha\\\": \\\"2023-5-20\\\",\\n    \\\"anulado\\\": 0,\\n    \\\"comentarios\\\": \\\"<p>Escribimos los comentarios de la compra<\\\\/p>\\\",\\n    \\\"fecha_ing\\\": \\\"2023-05-29 22:37:54\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-05-29 22:37:54\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 0\\n}\"', NULL, 1, '2023-05-29 22:37:54'),
+(90, 1, 'det-compras', 'create', '\"{\\n    \\\"id_det_compra\\\": 1,\\n    \\\"id_compra\\\": \\\"1\\\",\\n    \\\"id_producto\\\": \\\"8\\\",\\n    \\\"cantidad\\\": \\\"5\\\",\\n    \\\"costo\\\": \\\"559.99\\\",\\n    \\\"descuento\\\": \\\"10\\\",\\n    \\\"uuid\\\": \\\"42e5e43e-634b-4a6e-b9f1-516d945fafa2\\\",\\n    \\\"fecha_ing\\\": \\\"2023-05-31 11:07:18\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-05-31 11:07:18\\\",\\n    \\\"id_usuario_mod\\\": 1\\n}\"', NULL, 1, '2023-05-31 11:07:18'),
+(91, 9, 'productos', 'create', '\"{\\n    \\\"id_producto\\\": 9,\\n    \\\"nombre\\\": \\\"Xbox Series X\\\",\\n    \\\"sku\\\": \\\"xbox-sx-823\\\",\\n    \\\"descripcion\\\": \\\"<p>Descripcion de la Xbox Series X<\\\\/p>\\\",\\n    \\\"precio\\\": \\\"599\\\",\\n    \\\"id_categoria\\\": \\\"1\\\",\\n    \\\"id_sub_categoria\\\": \\\"1\\\",\\n    \\\"id_marca\\\": \\\"3\\\",\\n    \\\"fecha_ing\\\": \\\"2023-05-31 11:37:54\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-05-31 11:37:54\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', NULL, 1, '2023-05-31 11:37:54'),
+(92, 9, 'productos', 'update', '\"{\\n    \\\"id_producto\\\": 9,\\n    \\\"nombre\\\": \\\"Xbox Series X\\\",\\n    \\\"sku\\\": \\\"xbox-sx-823\\\",\\n    \\\"descripcion\\\": \\\"<p>Descripcion de la Xbox Series X<\\\\/p>\\\",\\n    \\\"precio\\\": \\\"599.00\\\",\\n    \\\"id_categoria\\\": 1,\\n    \\\"id_sub_categoria\\\": 1,\\n    \\\"id_marca\\\": 3,\\n    \\\"fecha_ing\\\": \\\"2023-05-31 11:37:54\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-05-31 11:37:54\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"id_categoria\\\": \\\"1\\\",\\n    \\\"id_sub_categoria\\\": \\\"1\\\",\\n    \\\"id_marca\\\": \\\"3\\\",\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-05-31 11:38:24'),
+(93, 2, 'det-compras', 'create', '\"{\\n    \\\"id_det_compra\\\": 2,\\n    \\\"id_compra\\\": \\\"1\\\",\\n    \\\"id_producto\\\": \\\"9\\\",\\n    \\\"cantidad\\\": \\\"30\\\",\\n    \\\"costo\\\": \\\"399.99\\\",\\n    \\\"descuento\\\": \\\"0.00\\\",\\n    \\\"uuid\\\": \\\"d3b24136-a312-414d-ad32-72c92446b6fe\\\",\\n    \\\"fecha_ing\\\": \\\"2023-05-31 11:39:14\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-05-31 11:39:14\\\",\\n    \\\"id_usuario_mod\\\": 1\\n}\"', NULL, 1, '2023-05-31 11:39:14'),
+(94, 1, 'clientes', 'create', '\"{\\n    \\\"id_cliente\\\": 1,\\n    \\\"nombre\\\": \\\"Ashly\\\",\\n    \\\"apellido\\\": \\\"Zelaya\\\",\\n    \\\"telefono\\\": \\\"13269076\\\",\\n    \\\"email\\\": \\\"cliente1@cliente.com\\\",\\n    \\\"fecha_ing\\\": \\\"2023-05-31 14:07:40\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-05-31 14:07:40\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', NULL, 1, '2023-05-31 14:07:40'),
+(95, 1, 'clientes', 'update', '\"{\\n    \\\"id_cliente\\\": 1,\\n    \\\"nombre\\\": \\\"Ashly\\\",\\n    \\\"apellido\\\": \\\"Zelaya\\\",\\n    \\\"telefono\\\": \\\"13269076\\\",\\n    \\\"email\\\": \\\"cliente1@cliente.com\\\",\\n    \\\"fecha_ing\\\": \\\"2023-05-31 14:07:40\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-05-31 14:07:40\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"nombre\\\": \\\"Gissel\\\",\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-05-31 14:57:37'),
+(96, 1, 'clientes', 'delete', '\"{\\n    \\\"id_cliente\\\": 1,\\n    \\\"nombre\\\": \\\"Gissel\\\",\\n    \\\"apellido\\\": \\\"Zelaya\\\",\\n    \\\"telefono\\\": \\\"13269076\\\",\\n    \\\"email\\\": \\\"cliente1@cliente.com\\\",\\n    \\\"fecha_ing\\\": \\\"2023-05-31 14:07:40\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-05-31 14:57:37\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"estado\\\": 0\\n}\"', 1, '2023-05-31 14:57:44'),
+(97, 1, 'clientes', 'update', '\"{\\n    \\\"id_cliente\\\": 1,\\n    \\\"nombre\\\": \\\"Gissel\\\",\\n    \\\"apellido\\\": \\\"Zelaya\\\",\\n    \\\"telefono\\\": \\\"13269076\\\",\\n    \\\"email\\\": \\\"cliente1@cliente.com\\\",\\n    \\\"fecha_ing\\\": \\\"2023-05-31 14:07:40\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-05-31 14:57:44\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 0\\n}\"', '\"{\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-05-31 14:57:49'),
+(98, 4, 'direcciones', 'update', '\"{\\n    \\\"id_direccion\\\": 4,\\n    \\\"id_cliente\\\": 1,\\n    \\\"contacto\\\": \\\"Edgar\\\",\\n    \\\"telefono\\\": \\\"22146477\\\",\\n    \\\"direccion\\\": \\\"<p>rqrwrwr<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 2,\\n    \\\"id_municipio\\\": 13,\\n    \\\"principal\\\": 1,\\n    \\\"fecha_ing\\\": null,\\n    \\\"id_usuario_ing\\\": null,\\n    \\\"fecha_mod\\\": null,\\n    \\\"id_usuario_mod\\\": null,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"id_cliente\\\": \\\"1\\\",\\n    \\\"id_departamento\\\": \\\"2\\\",\\n    \\\"id_municipio\\\": \\\"13\\\",\\n    \\\"principal\\\": \\\"1\\\",\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-06-03 21:29:31'),
+(99, 4, 'direcciones', 'delete', '\"{\\n    \\\"id_direccion\\\": 4,\\n    \\\"id_cliente\\\": 1,\\n    \\\"contacto\\\": \\\"Edgar\\\",\\n    \\\"telefono\\\": \\\"22146477\\\",\\n    \\\"direccion\\\": \\\"<p>rqrwrwr<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 2,\\n    \\\"id_municipio\\\": 13,\\n    \\\"principal\\\": 1,\\n    \\\"fecha_ing\\\": null,\\n    \\\"id_usuario_ing\\\": null,\\n    \\\"fecha_mod\\\": \\\"2023-06-03 21:29:31\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"estado\\\": 0\\n}\"', 1, '2023-06-03 21:29:49'),
+(100, 5, 'direcciones', 'create', '\"{\\n    \\\"id_direccion\\\": 5,\\n    \\\"id_cliente\\\": \\\"1\\\",\\n    \\\"contacto\\\": \\\"Edgar\\\",\\n    \\\"telefono\\\": \\\"22146477\\\",\\n    \\\"direccion\\\": \\\"<p>Barrio Concepcion<\\\\/p>\\\",\\n    \\\"id_departamento\\\": \\\"12\\\",\\n    \\\"id_municipio\\\": \\\"214\\\",\\n    \\\"principal\\\": \\\"1\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-03 21:31:02\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-03 21:31:02\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', NULL, 1, '2023-06-03 21:31:02'),
+(101, 10, 'productos', 'create', '\"{\\n    \\\"id_producto\\\": 10,\\n    \\\"nombre\\\": \\\"Nintendo Switch\\\",\\n    \\\"sku\\\": \\\"nin-sw-2324\\\",\\n    \\\"descripcion\\\": \\\"<p>Descripcion de Nintendo Switch<\\\\/p>\\\",\\n    \\\"precio\\\": \\\"350\\\",\\n    \\\"id_categoria\\\": \\\"1\\\",\\n    \\\"id_sub_categoria\\\": \\\"1\\\",\\n    \\\"id_marca\\\": \\\"1\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-03 22:18:15\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-03 22:18:15\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', NULL, 1, '2023-06-03 22:18:15'),
+(102, 10, 'productos', 'update', '\"{\\n    \\\"id_producto\\\": 10,\\n    \\\"nombre\\\": \\\"Nintendo Switch\\\",\\n    \\\"sku\\\": \\\"nin-sw-2324\\\",\\n    \\\"descripcion\\\": \\\"<p>Descripcion de Nintendo Switch<\\\\/p>\\\",\\n    \\\"precio\\\": \\\"350.00\\\",\\n    \\\"id_categoria\\\": 1,\\n    \\\"id_sub_categoria\\\": 1,\\n    \\\"id_marca\\\": 1,\\n    \\\"fecha_ing\\\": \\\"2023-06-03 22:18:15\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-03 22:18:15\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"id_categoria\\\": \\\"1\\\",\\n    \\\"id_sub_categoria\\\": \\\"1\\\",\\n    \\\"id_marca\\\": \\\"1\\\",\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-06-03 22:19:13'),
+(103, 3, 'det-compras', 'create', '\"{\\n    \\\"id_det_compra\\\": 3,\\n    \\\"id_compra\\\": \\\"1\\\",\\n    \\\"id_producto\\\": \\\"10\\\",\\n    \\\"cantidad\\\": \\\"10\\\",\\n    \\\"costo\\\": \\\"299.99\\\",\\n    \\\"descuento\\\": \\\"5\\\",\\n    \\\"uuid\\\": \\\"7aad2da0-2b46-4aea-bdbb-6050660dcb51\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-03 22:20:04\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-03 22:20:04\\\",\\n    \\\"id_usuario_mod\\\": 1\\n}\"', NULL, 1, '2023-06-03 22:20:04'),
+(104, 4, 'det-compras', 'create', '\"{\\n    \\\"id_det_compra\\\": 4,\\n    \\\"id_compra\\\": \\\"1\\\",\\n    \\\"id_producto\\\": \\\"10\\\",\\n    \\\"cantidad\\\": \\\"10\\\",\\n    \\\"costo\\\": \\\"299.99\\\",\\n    \\\"descuento\\\": \\\"5\\\",\\n    \\\"uuid\\\": \\\"4127817d-f685-494a-9961-585573f50d26\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-03 23:01:38\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-03 23:01:38\\\",\\n    \\\"id_usuario_mod\\\": 1\\n}\"', NULL, 1, '2023-06-03 23:01:38'),
+(105, 6, 'direcciones', 'create', '\"{\\n    \\\"id_direccion\\\": 6,\\n    \\\"id_cliente\\\": \\\"1\\\",\\n    \\\"contacto\\\": \\\"Marie\\\",\\n    \\\"telefono\\\": \\\"22146477\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 2<\\\\/p>\\\",\\n    \\\"id_departamento\\\": \\\"2\\\",\\n    \\\"id_municipio\\\": \\\"13\\\",\\n    \\\"principal\\\": \\\"0\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-05 17:45:54\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 17:45:54\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": \\\"0\\\"\\n}\"', NULL, 1, '2023-06-05 17:45:54'),
+(106, 2, 'clientes', 'create', '\"{\\n    \\\"id_cliente\\\": 2,\\n    \\\"nombre\\\": \\\"Edgar\\\",\\n    \\\"apellido\\\": \\\"Campos\\\",\\n    \\\"telefono\\\": \\\"31457777\\\",\\n    \\\"email\\\": \\\"cliente2@cliente.com\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-05 18:37:46\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 18:37:46\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', NULL, 1, '2023-06-05 18:37:46'),
+(107, 7, 'direcciones', 'create', '\"{\\n    \\\"id_direccion\\\": 7,\\n    \\\"id_cliente\\\": \\\"2\\\",\\n    \\\"contacto\\\": \\\"Benito\\\",\\n    \\\"telefono\\\": \\\"24224445\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion Principal<\\\\/p>\\\",\\n    \\\"id_departamento\\\": \\\"12\\\",\\n    \\\"id_municipio\\\": \\\"214\\\",\\n    \\\"principal\\\": \\\"1\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-05 18:39:27\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 18:39:27\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', NULL, 1, '2023-06-05 18:39:27'),
+(108, 8, 'direcciones', 'create', '\"{\\n    \\\"id_direccion\\\": 8,\\n    \\\"id_cliente\\\": \\\"1\\\",\\n    \\\"contacto\\\": \\\"Moises\\\",\\n    \\\"telefono\\\": \\\"214565333\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 3<\\\\/p>\\\",\\n    \\\"id_departamento\\\": \\\"12\\\",\\n    \\\"id_municipio\\\": \\\"199\\\",\\n    \\\"principal\\\": \\\"0\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-05 20:02:04\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 20:02:04\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', NULL, 1, '2023-06-05 20:02:04'),
+(109, 9, 'direcciones', 'create', '\"{\\n    \\\"id_direccion\\\": 9,\\n    \\\"id_cliente\\\": \\\"1\\\",\\n    \\\"contacto\\\": \\\"Cesar\\\",\\n    \\\"telefono\\\": \\\"13568900\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 4<\\\\/p>\\\",\\n    \\\"id_departamento\\\": \\\"12\\\",\\n    \\\"id_municipio\\\": \\\"199\\\",\\n    \\\"principal\\\": \\\"0\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-05 20:02:43\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 20:02:43\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', NULL, 1, '2023-06-05 20:02:43'),
+(110, 10, 'direcciones', 'create', '\"{\\n    \\\"id_direccion\\\": 10,\\n    \\\"id_cliente\\\": \\\"1\\\",\\n    \\\"contacto\\\": \\\"Fernando\\\",\\n    \\\"telefono\\\": \\\"55578886\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 5<\\\\/p>\\\",\\n    \\\"id_departamento\\\": \\\"12\\\",\\n    \\\"id_municipio\\\": \\\"199\\\",\\n    \\\"principal\\\": \\\"0\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-05 20:03:15\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 20:03:15\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', NULL, 1, '2023-06-05 20:03:15'),
+(111, 11, 'direcciones', 'create', '\"{\\n    \\\"id_direccion\\\": 11,\\n    \\\"id_cliente\\\": \\\"1\\\",\\n    \\\"contacto\\\": \\\"Jaime\\\",\\n    \\\"telefono\\\": \\\"57322222\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 6<\\\\/p>\\\",\\n    \\\"id_departamento\\\": \\\"6\\\",\\n    \\\"id_municipio\\\": \\\"97\\\",\\n    \\\"principal\\\": \\\"0\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-05 20:03:50\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 20:03:50\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', NULL, 1, '2023-06-05 20:03:50');
 
 -- --------------------------------------------------------
 
@@ -244,6 +278,157 @@ INSERT INTO `tbl_categorias` (`id_categoria`, `nombre`, `descripcion`, `fecha_in
 (2, 'Hogar', '\"Lorem\r\n ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod \r\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat.\"<br><p></p>', '2023-04-09 19:11:56', 1, '2023-04-09 19:16:58', 1, 1),
 (3, 'Linea Blanca', '<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborum.\"</p>', '2023-04-10 23:03:55', 1, '2023-04-10 23:03:55', 1, 1),
 (4, 'Juguetes', '<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborum.\"</p>', '2023-04-10 23:38:58', 1, '2023-04-10 23:38:58', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_clientes`
+--
+
+CREATE TABLE `tbl_clientes` (
+  `id_cliente` int NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `apellido` varchar(100) NOT NULL,
+  `telefono` varchar(11) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `fecha_ing` datetime DEFAULT NULL,
+  `id_usuario_ing` int DEFAULT NULL,
+  `fecha_mod` datetime DEFAULT NULL,
+  `id_usuario_mod` int DEFAULT NULL,
+  `estado` tinyint NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tbl_clientes`
+--
+
+INSERT INTO `tbl_clientes` (`id_cliente`, `nombre`, `apellido`, `telefono`, `email`, `fecha_ing`, `id_usuario_ing`, `fecha_mod`, `id_usuario_mod`, `estado`) VALUES
+(1, 'Gissel', 'Zelaya', '13269076', 'cliente1@cliente.com', '2023-05-31 14:07:40', 1, '2023-05-31 14:57:49', 1, 1),
+(2, 'Edgar', 'Campos', '31457777', 'cliente2@cliente.com', '2023-06-05 18:37:46', 1, '2023-06-05 18:37:46', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_compras`
+--
+
+CREATE TABLE `tbl_compras` (
+  `id_compra` int NOT NULL,
+  `codigo` varchar(10) NOT NULL,
+  `num_factura` varchar(10) NOT NULL,
+  `id_proveedor` int NOT NULL,
+  `tipo_compra` tinyint(1) NOT NULL,
+  `fecha` date NOT NULL,
+  `anulado` tinyint(1) NOT NULL DEFAULT '0',
+  `comentarios` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `fecha_ing` datetime DEFAULT NULL,
+  `id_usuario_ing` int DEFAULT NULL,
+  `fecha_mod` datetime DEFAULT NULL,
+  `id_usuario_mod` int DEFAULT NULL,
+  `estado` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tbl_compras`
+--
+
+INSERT INTO `tbl_compras` (`id_compra`, `codigo`, `num_factura`, `id_proveedor`, `tipo_compra`, `fecha`, `anulado`, `comentarios`, `fecha_ing`, `id_usuario_ing`, `fecha_mod`, `id_usuario_mod`, `estado`) VALUES
+(1, 'CMPR-00001', '42521', 1, 0, '2023-05-20', 0, '<p>Escribimos los comentarios de la compra</p>', '2023-05-29 22:37:54', 1, '2023-05-29 22:37:54', 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_departamentos`
+--
+
+CREATE TABLE `tbl_departamentos` (
+  `id_departamento` int NOT NULL,
+  `nombre` varchar(150) NOT NULL,
+  `codigo` varchar(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Dumping data for table `tbl_departamentos`
+--
+
+INSERT INTO `tbl_departamentos` (`id_departamento`, `nombre`, `codigo`) VALUES
+(1, 'AHUACHAPAN', 'AH'),
+(2, 'SANTA ANA', 'SA'),
+(3, 'SONSONATE', 'SO'),
+(4, 'CHALATENANGO', 'CH'),
+(5, 'LA LIBERTAD', 'LL'),
+(6, 'SAN SALVADOR', 'SS'),
+(7, 'CUSCATLAN', 'CU'),
+(8, 'LA PAZ', 'LP'),
+(9, 'CABANAS', 'CA'),
+(10, 'SAN VICENTE', 'SV'),
+(11, 'USULUTAN', 'US'),
+(12, 'SAN MIGUEL', 'SM'),
+(13, 'MORAZAN', 'MO'),
+(14, 'LA UNION', 'LU');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_det_compras`
+--
+
+CREATE TABLE `tbl_det_compras` (
+  `id_det_compra` int NOT NULL,
+  `id_compra` int NOT NULL,
+  `id_producto` int NOT NULL,
+  `cantidad` int NOT NULL,
+  `costo` decimal(10,2) NOT NULL,
+  `descuento` decimal(10,2) NOT NULL,
+  `uuid` varchar(36) NOT NULL,
+  `fecha_ing` datetime DEFAULT NULL,
+  `id_usuario_ing` int DEFAULT NULL,
+  `fecha_mod` datetime DEFAULT NULL,
+  `id_usuario_mod` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tbl_det_compras`
+--
+
+INSERT INTO `tbl_det_compras` (`id_det_compra`, `id_compra`, `id_producto`, `cantidad`, `costo`, `descuento`, `uuid`, `fecha_ing`, `id_usuario_ing`, `fecha_mod`, `id_usuario_mod`) VALUES
+(1, 1, 8, 10, '659.99', '12.00', '42e5e43e-634b-4a6e-b9f1-516d945fafa2', '2023-05-31 11:07:18', 1, '2023-06-04 13:43:01', 1),
+(2, 1, 9, 30, '399.99', '0.00', 'd3b24136-a312-414d-ad32-72c92446b6fe', '2023-05-31 11:39:14', 1, '2023-06-05 17:10:54', 1),
+(3, 1, 10, 10, '299.99', '5.00', '7aad2da0-2b46-4aea-bdbb-6050660dcb51', '2023-06-03 22:20:04', 1, '2023-06-03 22:20:04', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_direcciones`
+--
+
+CREATE TABLE `tbl_direcciones` (
+  `id_direccion` int NOT NULL,
+  `id_cliente` int NOT NULL,
+  `contacto` varchar(100) NOT NULL,
+  `telefono` varchar(11) NOT NULL,
+  `direccion` text NOT NULL,
+  `id_departamento` int NOT NULL,
+  `id_municipio` int NOT NULL,
+  `principal` tinyint NOT NULL,
+  `fecha_ing` datetime DEFAULT NULL,
+  `id_usuario_ing` int DEFAULT NULL,
+  `fecha_mod` datetime DEFAULT NULL,
+  `id_usuario_mod` int DEFAULT NULL,
+  `estado` tinyint NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tbl_direcciones`
+--
+
+INSERT INTO `tbl_direcciones` (`id_direccion`, `id_cliente`, `contacto`, `telefono`, `direccion`, `id_departamento`, `id_municipio`, `principal`, `fecha_ing`, `id_usuario_ing`, `fecha_mod`, `id_usuario_mod`, `estado`) VALUES
+(5, 1, 'Edgar', '22146477', '<p>Barrio Concepcion</p>', 12, 214, 1, '2023-06-03 21:31:02', 1, '2023-06-03 21:31:02', 1, 1),
+(6, 1, 'Marie', '22146477', '<p>Direccion 2</p>', 2, 13, 0, '2023-06-05 17:45:54', 1, '2023-06-05 17:45:54', 1, 0),
+(7, 2, 'Benito', '24224445', '<p>Direccion Principal</p>', 12, 214, 1, '2023-06-05 18:39:27', 1, '2023-06-05 18:39:27', 1, 1),
+(8, 1, 'Moises', '214565333', '<p>Direccion 3</p>', 12, 199, 0, '2023-06-05 20:02:04', 1, '2023-06-05 20:02:04', 1, 1),
+(9, 1, 'Cesar', '13568900', '<p>Direccion 4</p>', 12, 199, 0, '2023-06-05 20:02:43', 1, '2023-06-05 20:02:43', 1, 1),
+(10, 1, 'Fernando', '55578886', '<p>Direccion 5</p>', 12, 199, 0, '2023-06-05 20:03:15', 1, '2023-06-05 20:03:15', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -292,7 +477,18 @@ INSERT INTO `tbl_error_log` (`id_error_log`, `controller`, `mensaje`, `us_id`, `
 (26, 'marcas/update', 'yii\\base\\ErrorException: unlink(C:\\laragon\\www\\ecommerce/web): Is a directory in C:\\laragon\\www\\ecommerce\\modules\\productos\\controllers\\MarcasController.php:152<br />\nStack trace:<br />\n#0 [internal function]: yii\\base\\ErrorHandler-&gt;handleError(2, &#039;unlink(C:\\\\larag...&#039;, &#039;C:\\\\laragon\\\\www\\\\...&#039;, 152)<br />\n#1 C:\\laragon\\www\\ecommerce\\modules\\productos\\controllers\\MarcasController.php(152): unlink(&#039;C:\\\\laragon\\\\www\\\\...&#039;)<br />\n#2 [internal function]: app\\modules\\productos\\controllers\\MarcasController-&gt;actionUpdate(&#039;2&#039;)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;update&#039;, Array)<br />\n#6 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;productos/marca...&#039;, Array)<br />\n#7 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#8 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#9 {main}', 1, '2023-04-25 10:01:51'),
 (27, 'marcas/update', 'yii\\base\\ErrorException: unlink(C:\\laragon\\www\\ecommerce/web): Is a directory in C:\\laragon\\www\\ecommerce\\modules\\productos\\controllers\\MarcasController.php:152<br />\nStack trace:<br />\n#0 [internal function]: yii\\base\\ErrorHandler-&gt;handleError(2, &#039;unlink(C:\\\\larag...&#039;, &#039;C:\\\\laragon\\\\www\\\\...&#039;, 152)<br />\n#1 C:\\laragon\\www\\ecommerce\\modules\\productos\\controllers\\MarcasController.php(152): unlink(&#039;C:\\\\laragon\\\\www\\\\...&#039;)<br />\n#2 [internal function]: app\\modules\\productos\\controllers\\MarcasController-&gt;actionUpdate(&#039;1&#039;)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;update&#039;, Array)<br />\n#6 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;productos/marca...&#039;, Array)<br />\n#7 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#8 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#9 {main}', 1, '2023-04-25 10:40:22'),
 (28, 'marcas/update', 'yii\\base\\ErrorException: unlink(C:\\laragon\\www\\ecommerce/web): Is a directory in C:\\laragon\\www\\ecommerce\\modules\\productos\\controllers\\MarcasController.php:152<br />\nStack trace:<br />\n#0 [internal function]: yii\\base\\ErrorHandler-&gt;handleError(2, &#039;unlink(C:\\\\larag...&#039;, &#039;C:\\\\laragon\\\\www\\\\...&#039;, 152)<br />\n#1 C:\\laragon\\www\\ecommerce\\modules\\productos\\controllers\\MarcasController.php(152): unlink(&#039;C:\\\\laragon\\\\www\\\\...&#039;)<br />\n#2 [internal function]: app\\modules\\productos\\controllers\\MarcasController-&gt;actionUpdate(&#039;1&#039;)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;update&#039;, Array)<br />\n#6 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;productos/marca...&#039;, Array)<br />\n#7 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#8 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#9 {main}', 1, '2023-04-25 10:44:48'),
-(29, 'marcas/update', 'yii\\base\\ErrorException: unlink(C:\\laragon\\www\\ecommerce/web): Is a directory in C:\\laragon\\www\\ecommerce\\modules\\productos\\controllers\\MarcasController.php:152<br />\nStack trace:<br />\n#0 [internal function]: yii\\base\\ErrorHandler-&gt;handleError(2, &#039;unlink(C:\\\\larag...&#039;, &#039;C:\\\\laragon\\\\www\\\\...&#039;, 152)<br />\n#1 C:\\laragon\\www\\ecommerce\\modules\\productos\\controllers\\MarcasController.php(152): unlink(&#039;C:\\\\laragon\\\\www\\\\...&#039;)<br />\n#2 [internal function]: app\\modules\\productos\\controllers\\MarcasController-&gt;actionUpdate(&#039;1&#039;)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;update&#039;, Array)<br />\n#6 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;productos/marca...&#039;, Array)<br />\n#7 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#8 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#9 {main}', 1, '2023-04-25 10:45:32');
+(29, 'marcas/update', 'yii\\base\\ErrorException: unlink(C:\\laragon\\www\\ecommerce/web): Is a directory in C:\\laragon\\www\\ecommerce\\modules\\productos\\controllers\\MarcasController.php:152<br />\nStack trace:<br />\n#0 [internal function]: yii\\base\\ErrorHandler-&gt;handleError(2, &#039;unlink(C:\\\\larag...&#039;, &#039;C:\\\\laragon\\\\www\\\\...&#039;, 152)<br />\n#1 C:\\laragon\\www\\ecommerce\\modules\\productos\\controllers\\MarcasController.php(152): unlink(&#039;C:\\\\laragon\\\\www\\\\...&#039;)<br />\n#2 [internal function]: app\\modules\\productos\\controllers\\MarcasController-&gt;actionUpdate(&#039;1&#039;)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;update&#039;, Array)<br />\n#6 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;productos/marca...&#039;, Array)<br />\n#7 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#8 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#9 {main}', 1, '2023-04-25 10:45:32'),
+(30, 'proveedores/update', 'yii\\base\\UnknownPropertyException: Getting unknown property: app\\modules\\compras\\models\\Proveedores::2 in C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Component.php:154<br />\nStack trace:<br />\n#0 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\db\\BaseActiveRecord.php(296): yii\\base\\Component-&gt;__get(&#039;2&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\modules\\compras\\controllers\\ProveedoresController.php(136): yii\\db\\BaseActiveRecord-&gt;__get(&#039;2&#039;)<br />\n#2 [internal function]: app\\modules\\compras\\controllers\\ProveedoresController-&gt;actionUpdate(&#039;2&#039;)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;update&#039;, Array)<br />\n#6 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;compras/proveed...&#039;, Array)<br />\n#7 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#8 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#9 {main}', 1, '2023-05-20 22:12:23'),
+(31, 'proveedores/update', 'yii\\base\\UnknownPropertyException: Getting unknown property: app\\modules\\compras\\models\\Proveedores::2 in C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Component.php:154<br />\nStack trace:<br />\n#0 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\db\\BaseActiveRecord.php(296): yii\\base\\Component-&gt;__get(&#039;2&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\modules\\compras\\controllers\\ProveedoresController.php(136): yii\\db\\BaseActiveRecord-&gt;__get(&#039;2&#039;)<br />\n#2 [internal function]: app\\modules\\compras\\controllers\\ProveedoresController-&gt;actionUpdate(&#039;2&#039;)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;update&#039;, Array)<br />\n#6 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;compras/proveed...&#039;, Array)<br />\n#7 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#8 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#9 {main}', 1, '2023-05-20 22:14:21'),
+(32, 'proveedores/update', 'yii\\base\\UnknownPropertyException: Getting unknown property: app\\modules\\compras\\models\\Proveedores::1 in C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Component.php:154<br />\nStack trace:<br />\n#0 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\db\\BaseActiveRecord.php(296): yii\\base\\Component-&gt;__get(&#039;1&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\modules\\compras\\controllers\\ProveedoresController.php(136): yii\\db\\BaseActiveRecord-&gt;__get(&#039;1&#039;)<br />\n#2 [internal function]: app\\modules\\compras\\controllers\\ProveedoresController-&gt;actionUpdate(&#039;1&#039;)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;update&#039;, Array)<br />\n#6 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;compras/proveed...&#039;, Array)<br />\n#7 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#8 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#9 {main}', 1, '2023-05-20 22:15:55');
+INSERT INTO `tbl_error_log` (`id_error_log`, `controller`, `mensaje`, `us_id`, `fecha`) VALUES
+(33, 'proveedores/update', 'yii\\base\\UnknownPropertyException: Getting unknown property: app\\modules\\compras\\models\\Proveedores::1 in C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Component.php:154<br />\nStack trace:<br />\n#0 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\db\\BaseActiveRecord.php(296): yii\\base\\Component-&gt;__get(&#039;1&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\modules\\compras\\controllers\\ProveedoresController.php(136): yii\\db\\BaseActiveRecord-&gt;__get(&#039;1&#039;)<br />\n#2 [internal function]: app\\modules\\compras\\controllers\\ProveedoresController-&gt;actionUpdate(&#039;1&#039;)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;update&#039;, Array)<br />\n#6 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;compras/proveed...&#039;, Array)<br />\n#7 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#8 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#9 {main}', 1, '2023-05-20 22:18:31'),
+(34, 'proveedores/update', 'yii\\base\\UnknownPropertyException: Getting unknown property: app\\modules\\compras\\models\\Proveedores::1 in C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Component.php:154<br />\nStack trace:<br />\n#0 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\db\\BaseActiveRecord.php(296): yii\\base\\Component-&gt;__get(&#039;1&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\modules\\compras\\controllers\\ProveedoresController.php(136): yii\\db\\BaseActiveRecord-&gt;__get(&#039;1&#039;)<br />\n#2 [internal function]: app\\modules\\compras\\controllers\\ProveedoresController-&gt;actionUpdate(&#039;1&#039;)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;update&#039;, Array)<br />\n#6 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;compras/proveed...&#039;, Array)<br />\n#7 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#8 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#9 {main}', 1, '2023-05-20 22:22:28'),
+(35, 'direcciones/create', 'Exception: Fecha cannot be blank. in C:\\laragon\\www\\ecommerce\\modules\\clientes\\controllers\\DireccionesController.php:96<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\clientes\\controllers\\DireccionesController-&gt;actionCreate()<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;clientes/direcc...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-03 21:25:54'),
+(36, 'direcciones/create', 'Exception: Fecha cannot be blank. in C:\\laragon\\www\\ecommerce\\modules\\clientes\\controllers\\DireccionesController.php:96<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\clientes\\controllers\\DireccionesController-&gt;actionCreate()<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;clientes/direcc...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-03 21:27:04'),
+(37, 'direcciones/create', 'Exception: Fecha cannot be blank. in C:\\laragon\\www\\ecommerce\\modules\\clientes\\controllers\\DireccionesController.php:96<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\clientes\\controllers\\DireccionesController-&gt;actionCreate()<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;clientes/direcc...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-03 21:28:13'),
+(38, 'direcciones/create', 'Exception: Id Cliente cannot be blank. in C:\\laragon\\www\\ecommerce\\modules\\clientes\\controllers\\DireccionesController.php:81<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\clientes\\controllers\\DireccionesController-&gt;actionCreate()<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;clientes/direcc...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-05 16:37:25'),
+(39, 'direcciones/create', 'Exception: Id Cliente cannot be blank. in C:\\laragon\\www\\ecommerce\\modules\\clientes\\controllers\\DireccionesController.php:81<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\clientes\\controllers\\DireccionesController-&gt;actionCreate()<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;clientes/direcc...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-05 16:41:22');
 
 -- --------------------------------------------------------
 
@@ -327,6 +523,287 @@ INSERT INTO `tbl_marcas` (`id_marca`, `nombre`, `descripcion`, `imagen`, `fecha_
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_municipios`
+--
+
+CREATE TABLE `tbl_municipios` (
+  `id_municipio` int NOT NULL,
+  `id_departamento` int NOT NULL,
+  `nombre` varchar(125) NOT NULL,
+  `codigo` varchar(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Dumping data for table `tbl_municipios`
+--
+
+INSERT INTO `tbl_municipios` (`id_municipio`, `id_departamento`, `nombre`, `codigo`) VALUES
+(1, 1, 'AHUACHAPAN', '0101'),
+(2, 1, 'APANECA', '0102'),
+(3, 1, 'ATIQUIZAYA', '0103'),
+(4, 1, 'CONCEPCION DE ATACO', '0104'),
+(5, 1, 'EL REFUGIO', '0105'),
+(6, 1, 'GUAYMANGO', '0106'),
+(7, 1, 'JUJUTLA', '0107'),
+(8, 1, 'SAN FRANCISCO MENENDEZ', '0108'),
+(9, 1, 'SAN LORENZO', '0109'),
+(10, 1, 'SAN PEDRO PUXTLA', '0110'),
+(11, 1, 'TACUBA', '0111'),
+(12, 1, 'TURIN', '0112'),
+(13, 2, 'SANTA ANA', '0201'),
+(14, 2, 'CANDELARIA DE LA FRONTERA', '0202'),
+(15, 2, 'COATEPEQUE', '0203'),
+(16, 2, 'CHALCHUAPA', '0204'),
+(17, 2, 'EL CONGO', '0205'),
+(18, 2, 'EL PORVENIR', '0206'),
+(19, 2, 'MASAHUAT', '0207'),
+(20, 2, 'METAPAN', '0208'),
+(21, 2, 'SAN ANTONIO PAJONAL', '0209'),
+(22, 2, 'SAN SEBASTIAN SALITRILLO', '0210'),
+(23, 2, 'SANTA ROSA GUACHIPILIN', '0211'),
+(24, 2, 'SANTIAGO DE LA FRONTERA', '0212'),
+(25, 2, 'TEXISTEPEQUE', '0213'),
+(26, 3, 'SONSONATE', '0301'),
+(27, 3, 'ACAJUTLA', '0302'),
+(28, 3, 'ARMENIA', '0303'),
+(29, 3, 'CALUCO', '0304'),
+(30, 3, 'CUISNAHUAT', '0305'),
+(31, 3, 'IZALCO', '0306'),
+(32, 3, 'JUAYUA', '0307'),
+(33, 3, 'NAHUIZALCO', '0308'),
+(34, 3, 'NAHUILINGO', '0309'),
+(35, 3, 'SALCOATITAN', '0310'),
+(36, 3, 'SAN ANTONIO DEL MONTE', '0311'),
+(37, 3, 'SAN JULIAN', '0312'),
+(38, 3, 'SANTA CATARINA MASAHUAT', '0313'),
+(39, 3, 'SANTA ISABEL ISHUATAN', '0314'),
+(40, 3, 'SANTO DOMINGO DE GUZMAN', '0315'),
+(41, 3, 'SONZACATE', '0316'),
+(42, 4, 'CHALATENANGO', '0401'),
+(43, 4, 'AGUA CALIENTE', '0402'),
+(44, 4, 'ARCATAO', '0403'),
+(45, 4, 'AZACUALPA', '0404'),
+(46, 4, 'SAN JOSE CANCASQUE', '0405'),
+(47, 4, 'CITALA', '0406'),
+(48, 4, 'COMALAPA', '0407'),
+(49, 4, 'CONCEPCION QUEZALTEPEQUE', '0408'),
+(50, 4, 'DULCE NOMBRE DE MARIA', '0409'),
+(51, 4, 'EL CARRIZAL', '0410'),
+(52, 4, 'EL PARAISO', '0411'),
+(53, 4, 'LA LAGUNA', '0412'),
+(54, 4, 'LA PALMA', '0413'),
+(55, 4, 'LA REINA', '0414'),
+(56, 4, 'LAS FLORES', '0415'),
+(57, 4, 'LAS VUELTAS', '0416'),
+(58, 4, 'NOMBRE DE JESUS', '0417'),
+(59, 4, 'NUEVA CONCEPCION', '0418'),
+(60, 4, 'NUEVA TRINIDAD', '0419'),
+(61, 4, 'OJOS DE AGUA', '0420'),
+(62, 4, 'POTONICO', '0421'),
+(63, 4, 'SAN ANTONIO DE LA CRUZ', '0422'),
+(64, 4, 'SAN ANTONIO LOS RANCHOS', '0423'),
+(65, 4, 'SAN FERNANDO', '0424'),
+(66, 4, 'SAN FRANCISCO LEMPA', '0425'),
+(67, 4, 'SAN FRANCISCO MORAZAN', '0426'),
+(68, 4, 'SAN IGNACIO', '0427'),
+(69, 4, 'SAN ISIDRO LABRADOR', '0428'),
+(70, 4, 'SAN LUIS DEL CARMEN', '0429'),
+(71, 4, 'SAN MIGUEL DE MERCEDES', '0430'),
+(72, 4, 'SAN RAFAEL', '0431'),
+(73, 4, 'SANTA RITA', '0432'),
+(74, 4, 'TEJUTLA', '0433'),
+(75, 5, 'SANTA TECLA', '0501'),
+(76, 5, 'ANTIGUO CUSCATLAN', '0502'),
+(77, 5, 'CIUDAD ARCE', '0503'),
+(78, 5, 'COLON', '0504'),
+(79, 5, 'COMASAGUA', '0505'),
+(80, 5, 'CHILTIUPAN', '0506'),
+(81, 5, 'HUIZUCAR', '0507'),
+(82, 5, 'JAYAQUE', '0508'),
+(83, 5, 'JICALAPA', '0509'),
+(84, 5, 'LA LIBERTAD', '0510'),
+(85, 5, 'NUEVO CUSCATLAN', '0511'),
+(86, 5, 'SAN JUAN OPICO', '0512'),
+(87, 5, 'QUEZALTEPEQUE', '0513'),
+(88, 5, 'SACACOYO', '0514'),
+(89, 5, 'SAN JOSE VILLANUEVA', '0515'),
+(90, 5, 'SAN MATIAS', '0516'),
+(91, 5, 'SAN PABLO TACACHICO', '0517'),
+(92, 5, 'TALNIQUE', '0518'),
+(93, 5, 'TAMANIQUE', '0519'),
+(94, 5, 'TEOTEPEQUE', '0520'),
+(95, 5, 'TEPECOYO', '0521'),
+(96, 5, 'ZARAGOZA', '0522'),
+(97, 6, 'SAN SALVADOR', '0601'),
+(98, 6, 'AGUILARES', '0602'),
+(99, 6, 'APOPA', '0603'),
+(100, 6, 'AYUTUXTEPEQUE', '0604'),
+(101, 6, 'CUSCATANCINGO', '0605'),
+(102, 6, 'DELGADO', '0606'),
+(103, 6, 'EL PAISNAL', '0607'),
+(104, 6, 'GUAZAPA', '0608'),
+(105, 6, 'ILOPANGO', '0609'),
+(106, 6, 'MEJICANOS', '0610'),
+(107, 6, 'NEJAPA', '0611'),
+(108, 6, 'PANCHIMALCO', '0612'),
+(109, 6, 'ROSARIO DE MORA', '0613'),
+(110, 6, 'SAN MARCOS', '0614'),
+(111, 6, 'SAN MARTIN', '0615'),
+(112, 6, 'SANTIAGO TEXACUANGOS', '0616'),
+(113, 6, 'SANTO TOMAS', '0617'),
+(114, 6, 'SOYAPANGO', '0618'),
+(115, 6, 'TONACATEPEQUE', '0619'),
+(116, 7, 'COJUTEPEQUE', '0701'),
+(117, 7, 'CANDELARIA', '0702'),
+(118, 7, 'EL CARMEN', '0703'),
+(119, 7, 'EL ROSARIO', '0704'),
+(120, 7, 'MONTE SAN JUAN', '0705'),
+(121, 7, 'ORATORIO DE CONCEPCION', '0706'),
+(122, 7, 'SAN BARTOLOME PERULAPIA', '0707'),
+(123, 7, 'SAN CRISTOBAL', '0708'),
+(124, 7, 'SAN JOSE GUAYABAL', '0709'),
+(125, 7, 'SAN PEDRO PERULAPAN', '0710'),
+(126, 7, 'SAN RAFAEL CEDROS', '0711'),
+(127, 7, 'SAN RAMON', '0712'),
+(128, 7, 'SANTA CRUZ ANALQUITO', '0713'),
+(129, 7, 'SANTA CRUZ MICHAPA', '0714'),
+(130, 7, 'SUCHITOTO', '0715'),
+(131, 7, 'TENANCINGO', '0716'),
+(132, 8, 'ZACATECOLUCA', '0801'),
+(133, 8, 'CUYULTITAN', '0802'),
+(134, 8, 'EL ROSARIO', '0803'),
+(135, 8, 'JERUSALEN', '0804'),
+(136, 8, 'MERCEDES DE LA CEIBA', '0805'),
+(137, 8, 'OLOCUILTA', '0806'),
+(138, 8, 'PARAISO DE OSORIO', '0807'),
+(139, 8, 'SAN ANTONIO MASAHUAT', '0808'),
+(140, 8, 'SAN EMIGDIO', '0809'),
+(141, 8, 'SAN FRANCISCO CHINAMECA', '0810'),
+(142, 8, 'SAN JUAN NONUALCO', '0811'),
+(143, 8, 'SAN JUAN TALPA', '0812'),
+(144, 8, 'SAN JUAN TEPEZONTES', '0813'),
+(145, 8, 'SAN LUIS TALPA', '0814'),
+(146, 8, 'SAN LUIS LA HERRADURA', '0815'),
+(147, 8, 'SAN MIGUEL TEPEZONTES', '0816'),
+(148, 8, 'SAN PEDRO MASAHUAT', '0817'),
+(149, 8, 'SAN PEDRO NONUALCO', '0818'),
+(150, 8, 'SAN RAFAEL OBRAJUELO', '0819'),
+(151, 8, 'SANTA MARIA OSTUMA', '0820'),
+(152, 8, 'SANTIAGO NONUALCO', '0821'),
+(153, 8, 'TAPALHUACA', '0822'),
+(154, 9, 'SENSUNTEPEQUE', '0901'),
+(155, 9, 'CINQUERA', '0902'),
+(156, 9, 'DOLORES', '0903'),
+(157, 9, 'GUACOTECTI', '0904'),
+(158, 9, 'ILOBASCO', '0905'),
+(159, 9, 'JUTIAPA', '0906'),
+(160, 9, 'SAN ISIDRO', '0907'),
+(161, 9, 'TEJUTEPEQUE', '0908'),
+(162, 9, 'VICTORIA', '0909'),
+(163, 10, 'SAN VICENTE', '1001'),
+(164, 10, 'APASTEPEQUE', '1002'),
+(165, 10, 'GUADALUPE', '1003'),
+(166, 10, 'SAN CAYETANO ISTEPEQUE', '1004'),
+(167, 10, 'SAN ESTEBAN CATARINA', '1005'),
+(168, 10, 'SAN ILDEFONSO', '1006'),
+(169, 10, 'SAN LORENZO', '1007'),
+(170, 10, 'SAN SEBASTIAN', '1008'),
+(171, 10, 'SANTA CLARA', '1009'),
+(172, 10, 'SANTO DOMINGO', '1010'),
+(173, 10, 'TECOLUCA', '1011'),
+(174, 10, 'TEPETITAN', '1012'),
+(175, 10, 'VERAPAZ', '1013'),
+(176, 11, 'USULUTAN', '1101'),
+(177, 11, 'ALEGRIA', '1102'),
+(178, 11, 'BERLIN', '1103'),
+(179, 11, 'CALIFORNIA', '1104'),
+(180, 11, 'CONCEPCION BATRES', '1105'),
+(181, 11, 'EL TRIUNFO', '1106'),
+(182, 11, 'EREGUAYQUIN', '1107'),
+(183, 11, 'ESTANZUELAS', '1108'),
+(184, 11, 'JIQUILISCO', '1109'),
+(185, 11, 'JUCUAPA', '1110'),
+(186, 11, 'JUCUARAN', '1111'),
+(187, 11, 'MERCEDES UMANA', '1112'),
+(188, 11, 'NUEVA GRANADA', '1113'),
+(189, 11, 'OZATLAN', '1114'),
+(190, 11, 'PUERTO EL TRIUNFO', '1115'),
+(191, 11, 'SAN AGUSTIN', '1116'),
+(192, 11, 'SAN BUENAVENTURA', '1117'),
+(193, 11, 'SAN DIONISIO', '1118'),
+(194, 11, 'SAN FRANCISCO JAVIER', '1119'),
+(195, 11, 'SANTA ELENA', '1120'),
+(196, 11, 'SANTA MARIA', '1121'),
+(197, 11, 'SANTIAGO DE MARIA', '1122'),
+(198, 11, 'TECAPAN', '1123'),
+(199, 12, 'SAN MIGUEL', '1201'),
+(200, 12, 'CAROLINA', '1202'),
+(201, 12, 'CIUDAD BARRIOS', '1203'),
+(202, 12, 'COMACARAN', '1204'),
+(203, 12, 'CHAPELTIQUE', '1205'),
+(204, 12, 'CHINAMECA', '1206'),
+(205, 12, 'CHIRILAGUA', '1207'),
+(206, 12, 'EL TRANSITO', '1208'),
+(207, 12, 'LOLOTIQUE', '1209'),
+(208, 12, 'MONCAGUA', '1210'),
+(209, 12, 'NUEVA GUADALUPE', '1211'),
+(210, 12, 'NUEVO EDEN DE SAN JUAN', '1212'),
+(211, 12, 'QUELEPA', '1213'),
+(212, 12, 'SAN ANTONIO', '1214'),
+(213, 12, 'SAN GERARDO', '1215'),
+(214, 12, 'SAN JORGE', '1216'),
+(215, 12, 'SAN LUIS DE LA REINA', '1217'),
+(216, 12, 'SAN RAFAEL ORIENTE', '1218'),
+(217, 12, 'SESORI', '1219'),
+(218, 12, 'ULUAZAPA', '1220'),
+(219, 13, 'SAN FRANCISCO GOTERA', '1301'),
+(220, 13, 'ARAMBALA', '1302'),
+(221, 13, 'CACAOPERA', '1303'),
+(222, 13, 'CORINTO', '1304'),
+(223, 13, 'CHILANGA', '1305'),
+(224, 13, 'DELICIAS DE CONCEPCION', '1306'),
+(225, 13, 'EL DIVISADERO', '1307'),
+(226, 13, 'EL ROSARIO', '1308'),
+(227, 13, 'GUALOCOCTI', '1309'),
+(228, 13, 'GUATAJIAGUA', '1310'),
+(229, 13, 'JOATECA', '1311'),
+(230, 13, 'JOCOAITIQUE', '1312'),
+(231, 13, 'JOCORO', '1313'),
+(232, 13, 'LOLOTIQUILLO', '1314'),
+(233, 13, 'MEANGUERA', '1315'),
+(234, 13, 'OSICALA', '1316'),
+(235, 13, 'PERQUIN', '1317'),
+(236, 13, 'SAN CARLOS', '1318'),
+(237, 13, 'SAN FERNANDO', '1319'),
+(238, 13, 'SAN ISIDRO', '1320'),
+(239, 13, 'SAN SIMON', '1321'),
+(240, 13, 'SENSEMBRA', '1322'),
+(241, 13, 'SOCIEDAD', '1323'),
+(242, 13, 'TOROLA', '1324'),
+(243, 13, 'YAMABAL', '1325'),
+(244, 13, 'YOLOAIQUIN', '1326'),
+(245, 14, 'LA UNION', '1401'),
+(246, 14, 'ANAMOROS', '1402'),
+(247, 14, 'BOLIVAR', '1403'),
+(248, 14, 'CONCEPCION ORIENTE', '1404'),
+(249, 14, 'CONCHAGUA', '1405'),
+(250, 14, 'EL CARMEN', '1406'),
+(251, 14, 'EL SAUCE', '1407'),
+(252, 14, 'INTIPUCA', '1408'),
+(253, 14, 'LISLIQUE', '1409'),
+(254, 14, 'MEANGUERA DEL GOLFO', '1410'),
+(255, 14, 'NUEVA ESPARTA', '1411'),
+(256, 14, 'PASAQUINA', '1412'),
+(257, 14, 'POLOROS', '1413'),
+(258, 14, 'SAN ALEJO', '1414'),
+(259, 14, 'SAN JOSE', '1415'),
+(260, 14, 'SANTA ROSA DE LIMA', '1416'),
+(261, 14, 'YAYANTIQUE', '1417'),
+(262, 14, 'YUCUAIQUIN', '1418');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_productos`
 --
 
@@ -346,6 +823,15 @@ CREATE TABLE `tbl_productos` (
   `estado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
+--
+-- Dumping data for table `tbl_productos`
+--
+
+INSERT INTO `tbl_productos` (`id_producto`, `nombre`, `sku`, `descripcion`, `precio`, `id_categoria`, `id_sub_categoria`, `id_marca`, `fecha_ing`, `id_usuario_ing`, `fecha_mod`, `id_usuario_mod`, `estado`) VALUES
+(8, 'Playstation 5', 'ps5-2023uh414', '<p><b>PlayStation 5 </b>(abreviada como PS5) es la quinta consola de videojuegos de sobremesa desarrollada por la empresa Sony Interactive Entertainment. Fue anunciada en el año 2019 como la sucesora de la PlayStation 4, la PS5 se lanzó el 12 de noviembre de 2020 en Australia, Japón, Nueva Zelanda, Estados Unidos, Canadá, México y Corea del Sur, y en el resto de países el 19 de noviembre de 2020. La PlayStation 5 junto con la Xbox Series X|S de Microsoft, lanzada el mismo mes, son parte de la novena generación de consolas de videojuegos.<br></p>', '800.00', 1, 1, 2, '2023-05-16 17:40:53', 1, '2023-05-17 20:11:00', 1, 1),
+(9, 'Xbox Series X', 'xbox-sx-823', '<p>Descripcion de la Xbox Series X</p>', '599.00', 1, 1, 3, '2023-05-31 11:37:54', 1, '2023-05-31 11:38:24', 1, 1),
+(10, 'Nintendo Switch', 'nin-sw-2324', '<p>Descripcion de Nintendo Switch</p>', '350.00', 1, 1, 1, '2023-06-03 22:18:15', 1, '2023-06-03 22:19:13', 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -360,6 +846,50 @@ CREATE TABLE `tbl_productos_imagenes` (
   `fecha_ing` datetime DEFAULT NULL,
   `id_usuario_ing` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Dumping data for table `tbl_productos_imagenes`
+--
+
+INSERT INTO `tbl_productos_imagenes` (`id_producto_imagen`, `id_producto`, `imagen`, `principal`, `fecha_ing`, `id_usuario_ing`) VALUES
+(56, 8, '5d791fee6f5b8d39ce7fb77e9a4de17e.jpeg', 1, '2023-05-17 19:22:54', 1),
+(57, 8, '5465efc416652caa187383e5ebe65c0b.jpg', 0, '2023-05-17 19:23:01', 1),
+(58, 8, 'c5d68426bb9454e9ab1a5ecf261d6457.jpeg', 0, '2023-05-17 19:23:01', 1),
+(59, 8, '9ec64212fc3fc9175bd6e5c9be456a5b.jpg', 0, '2023-05-17 19:23:01', 1),
+(60, 8, '1bacee130f59e14a84ec05dff24af3d7.jpeg', 0, '2023-05-17 19:23:05', 1),
+(61, 8, 'bbfb0cb777538b94a594fa23a104f7bb.jpg', 0, '2023-05-17 19:23:10', 1),
+(62, 9, 'eb2a9a93f2f5a330ec2bdfb3c9dd3583.jpg', 1, '2023-05-31 11:38:22', 1),
+(63, 10, '670c18ed25148301961054effe1e992d.jpg', 1, '2023-06-03 22:19:12', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_proveedores`
+--
+
+CREATE TABLE `tbl_proveedores` (
+  `id_proveedor` int NOT NULL,
+  `codigo` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `direccion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `id_departamento` int NOT NULL,
+  `id_municipio` int NOT NULL,
+  `telefono` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `fecha_ing` datetime DEFAULT NULL,
+  `id_usuario_ing` int DEFAULT NULL,
+  `fecha_mod` datetime DEFAULT NULL,
+  `id_usuario_mod` int DEFAULT NULL,
+  `estado` tinyint NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tbl_proveedores`
+--
+
+INSERT INTO `tbl_proveedores` (`id_proveedor`, `codigo`, `nombre`, `direccion`, `id_departamento`, `id_municipio`, `telefono`, `email`, `fecha_ing`, `id_usuario_ing`, `fecha_mod`, `id_usuario_mod`, `estado`) VALUES
+(1, 'PVD-0001', 'Proveedor 1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 12, 214, '42424678', 'proveedor1@gmail.com', '2023-05-20 11:47:23', 1, '2023-05-20 21:21:57', 1, 1),
+(2, 'PVD-0002', 'Marielos', '<p>Lorem ipsum editado</p>', 12, 214, '32468900', 'proveedor2@proveedor.com', '2023-05-20 22:07:47', 1, '2023-05-20 22:28:51', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -419,8 +949,8 @@ CREATE TABLE `tbl_usuarios` (
 --
 
 INSERT INTO `tbl_usuarios` (`id_usuario`, `username`, `nombre`, `apellido`, `auth_key`, `password_hash`, `email`, `imagen`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'James', 'Guevara', 'AxK42pI4nqEvIyBOBUJVfSR9oRTq-chL', '$2y$13$hQrQEsIKutJ6FrRy0/YyxeKE/A4a7vSz0qfOYN1u0GW.w7L6lam1C', 'admin@outlook.com', '/ecommerce/web/avatars/UVh7l0PQlr6XFExI1FeMzog3pGtAlmPx.gif', 1, 1677203598, 1677203598),
-(2, 'demo', 'demo', 'demo', '_LDZ2AUvtDDoy36zC6bJhNgJRM9rYO3D', '$2y$13$o0rSCi/5gEx2cZpNt1Tm.OQsOvwtLduPRfvE1IhIUsEXOIYKXhKc2', 'demo@outlook.com', '/ecommerce/web/avatars/lWum6HO1LEjPFCfpx_dtAhPtbD0hwOJL.png', 1, 1677203935, 1677203935);
+(1, 'admin', 'James', 'Guevara', 'AxK42pI4nqEvIyBOBUJVfSR9oRTq-chL', '$2y$13$hQrQEsIKutJ6FrRy0/YyxeKE/A4a7vSz0qfOYN1u0GW.w7L6lam1C', 'admin@outlook.com', '/avatars/NtlwwXuxMF6Me4EYgK7ymifFda24QwEk.gif', 1, 1677203598, 1677203598),
+(2, 'demo', 'demo', 'demo', '_LDZ2AUvtDDoy36zC6bJhNgJRM9rYO3D', '$2y$13$o0rSCi/5gEx2cZpNt1Tm.OQsOvwtLduPRfvE1IhIUsEXOIYKXhKc2', 'demo@outlook.com', '/avatars/Ny4a_5P9S4CpJtKHy7igRgkfuQdZdRrr.png', 1, 1677203935, 1677203935);
 
 --
 -- Indexes for dumped tables
@@ -470,6 +1000,50 @@ ALTER TABLE `tbl_categorias`
   ADD KEY `id_usuario_mod` (`id_usuario_mod`);
 
 --
+-- Indexes for table `tbl_clientes`
+--
+ALTER TABLE `tbl_clientes`
+  ADD PRIMARY KEY (`id_cliente`),
+  ADD KEY `id_usuario_ing` (`id_usuario_ing`),
+  ADD KEY `id_usuario_mod` (`id_usuario_mod`);
+
+--
+-- Indexes for table `tbl_compras`
+--
+ALTER TABLE `tbl_compras`
+  ADD PRIMARY KEY (`id_compra`),
+  ADD KEY `id_proveedor` (`id_proveedor`),
+  ADD KEY `id_usuario_ing` (`id_usuario_ing`),
+  ADD KEY `id_usuario_mod` (`id_usuario_mod`);
+
+--
+-- Indexes for table `tbl_departamentos`
+--
+ALTER TABLE `tbl_departamentos`
+  ADD PRIMARY KEY (`id_departamento`);
+
+--
+-- Indexes for table `tbl_det_compras`
+--
+ALTER TABLE `tbl_det_compras`
+  ADD PRIMARY KEY (`id_det_compra`),
+  ADD KEY `id_compra` (`id_compra`),
+  ADD KEY `id_producto` (`id_producto`),
+  ADD KEY `id_usuario_ing` (`id_usuario_ing`),
+  ADD KEY `id_usuario_mod` (`id_usuario_mod`);
+
+--
+-- Indexes for table `tbl_direcciones`
+--
+ALTER TABLE `tbl_direcciones`
+  ADD PRIMARY KEY (`id_direccion`),
+  ADD KEY `id_cliente` (`id_cliente`),
+  ADD KEY `id_departamento` (`id_departamento`),
+  ADD KEY `id_municipio` (`id_municipio`),
+  ADD KEY `id_usuario_ing` (`id_usuario_ing`),
+  ADD KEY `id_usuario_mod` (`id_usuario_mod`);
+
+--
 -- Indexes for table `tbl_error_log`
 --
 ALTER TABLE `tbl_error_log`
@@ -483,6 +1057,15 @@ ALTER TABLE `tbl_marcas`
   ADD PRIMARY KEY (`id_marca`),
   ADD KEY `id_usuario_ing` (`id_usuario_ing`),
   ADD KEY `id_usuario_mod` (`id_usuario_mod`);
+
+--
+-- Indexes for table `tbl_municipios`
+--
+ALTER TABLE `tbl_municipios`
+  ADD PRIMARY KEY (`id_municipio`),
+  ADD KEY `ad_mu_relacion` (`id_departamento`),
+  ADD KEY `ad_mu_relacion_2` (`id_departamento`),
+  ADD KEY `ad_mu_relacion_3` (`id_departamento`);
 
 --
 -- Indexes for table `tbl_productos`
@@ -501,6 +1084,16 @@ ALTER TABLE `tbl_productos`
 ALTER TABLE `tbl_productos_imagenes`
   ADD PRIMARY KEY (`id_producto_imagen`),
   ADD KEY `id_producto` (`id_producto`);
+
+--
+-- Indexes for table `tbl_proveedores`
+--
+ALTER TABLE `tbl_proveedores`
+  ADD PRIMARY KEY (`id_proveedor`),
+  ADD KEY `id_departamento` (`id_departamento`),
+  ADD KEY `id_municipio` (`id_municipio`),
+  ADD KEY `id_usuario_ing` (`id_usuario_ing`),
+  ADD KEY `id_usuario_mod` (`id_usuario_mod`);
 
 --
 -- Indexes for table `tbl_sub_categorias`
@@ -527,7 +1120,7 @@ ALTER TABLE `tbl_usuarios`
 -- AUTO_INCREMENT for table `tbl_bitacora`
 --
 ALTER TABLE `tbl_bitacora`
-  MODIFY `id_bitacora` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id_bitacora` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
 -- AUTO_INCREMENT for table `tbl_categorias`
@@ -536,10 +1129,40 @@ ALTER TABLE `tbl_categorias`
   MODIFY `id_categoria` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `tbl_clientes`
+--
+ALTER TABLE `tbl_clientes`
+  MODIFY `id_cliente` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tbl_compras`
+--
+ALTER TABLE `tbl_compras`
+  MODIFY `id_compra` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tbl_departamentos`
+--
+ALTER TABLE `tbl_departamentos`
+  MODIFY `id_departamento` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `tbl_det_compras`
+--
+ALTER TABLE `tbl_det_compras`
+  MODIFY `id_det_compra` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `tbl_direcciones`
+--
+ALTER TABLE `tbl_direcciones`
+  MODIFY `id_direccion` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
 -- AUTO_INCREMENT for table `tbl_error_log`
 --
 ALTER TABLE `tbl_error_log`
-  MODIFY `id_error_log` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_error_log` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `tbl_marcas`
@@ -548,16 +1171,28 @@ ALTER TABLE `tbl_marcas`
   MODIFY `id_marca` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `tbl_municipios`
+--
+ALTER TABLE `tbl_municipios`
+  MODIFY `id_municipio` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=263;
+
+--
 -- AUTO_INCREMENT for table `tbl_productos`
 --
 ALTER TABLE `tbl_productos`
-  MODIFY `id_producto` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_producto` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tbl_productos_imagenes`
 --
 ALTER TABLE `tbl_productos_imagenes`
-  MODIFY `id_producto_imagen` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_producto_imagen` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+
+--
+-- AUTO_INCREMENT for table `tbl_proveedores`
+--
+ALTER TABLE `tbl_proveedores`
+  MODIFY `id_proveedor` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_sub_categorias`
@@ -608,6 +1243,40 @@ ALTER TABLE `tbl_categorias`
   ADD CONSTRAINT `tbl_categorias_ibfk_2` FOREIGN KEY (`id_usuario_mod`) REFERENCES `tbl_usuarios` (`id_usuario`);
 
 --
+-- Constraints for table `tbl_clientes`
+--
+ALTER TABLE `tbl_clientes`
+  ADD CONSTRAINT `tbl_clientes_ibfk_1` FOREIGN KEY (`id_usuario_ing`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `tbl_clientes_ibfk_2` FOREIGN KEY (`id_usuario_mod`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Constraints for table `tbl_compras`
+--
+ALTER TABLE `tbl_compras`
+  ADD CONSTRAINT `tbl_compras_ibfk_1` FOREIGN KEY (`id_proveedor`) REFERENCES `tbl_proveedores` (`id_proveedor`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `tbl_compras_ibfk_2` FOREIGN KEY (`id_usuario_ing`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `tbl_compras_ibfk_3` FOREIGN KEY (`id_usuario_mod`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Constraints for table `tbl_det_compras`
+--
+ALTER TABLE `tbl_det_compras`
+  ADD CONSTRAINT `tbl_det_compras_ibfk_1` FOREIGN KEY (`id_compra`) REFERENCES `tbl_compras` (`id_compra`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `tbl_det_compras_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `tbl_productos` (`id_producto`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `tbl_det_compras_ibfk_3` FOREIGN KEY (`id_usuario_ing`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `tbl_det_compras_ibfk_4` FOREIGN KEY (`id_usuario_mod`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Constraints for table `tbl_direcciones`
+--
+ALTER TABLE `tbl_direcciones`
+  ADD CONSTRAINT `tbl_direcciones_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `tbl_clientes` (`id_cliente`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `tbl_direcciones_ibfk_2` FOREIGN KEY (`id_departamento`) REFERENCES `tbl_departamentos` (`id_departamento`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `tbl_direcciones_ibfk_3` FOREIGN KEY (`id_municipio`) REFERENCES `tbl_municipios` (`id_municipio`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `tbl_direcciones_ibfk_4` FOREIGN KEY (`id_usuario_ing`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `tbl_direcciones_ibfk_5` FOREIGN KEY (`id_usuario_mod`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
 -- Constraints for table `tbl_error_log`
 --
 ALTER TABLE `tbl_error_log`
@@ -619,6 +1288,12 @@ ALTER TABLE `tbl_error_log`
 ALTER TABLE `tbl_marcas`
   ADD CONSTRAINT `tbl_marcas_ibfk_1` FOREIGN KEY (`id_usuario_ing`) REFERENCES `tbl_usuarios` (`id_usuario`),
   ADD CONSTRAINT `tbl_marcas_ibfk_2` FOREIGN KEY (`id_usuario_mod`) REFERENCES `tbl_usuarios` (`id_usuario`);
+
+--
+-- Constraints for table `tbl_municipios`
+--
+ALTER TABLE `tbl_municipios`
+  ADD CONSTRAINT `tbl_municipios_ibfk_1` FOREIGN KEY (`id_departamento`) REFERENCES `tbl_departamentos` (`id_departamento`);
 
 --
 -- Constraints for table `tbl_productos`
@@ -635,6 +1310,15 @@ ALTER TABLE `tbl_productos`
 --
 ALTER TABLE `tbl_productos_imagenes`
   ADD CONSTRAINT `tbl_productos_imagenes_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `tbl_productos` (`id_producto`);
+
+--
+-- Constraints for table `tbl_proveedores`
+--
+ALTER TABLE `tbl_proveedores`
+  ADD CONSTRAINT `tbl_proveedores_ibfk_1` FOREIGN KEY (`id_departamento`) REFERENCES `tbl_departamentos` (`id_departamento`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbl_proveedores_ibfk_2` FOREIGN KEY (`id_municipio`) REFERENCES `tbl_municipios` (`id_municipio`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbl_proveedores_ibfk_3` FOREIGN KEY (`id_usuario_ing`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbl_proveedores_ibfk_4` FOREIGN KEY (`id_usuario_mod`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `tbl_sub_categorias`
