@@ -8,10 +8,10 @@
         <img src="https://www.univo.edu.sv/wp-content/uploads/2019/09/lo2.png">
     </a>
 </p>    
-    <h1 align="center">Yii 2 BoilerPlate UNIVO</h1>
+    <h1 align="center">Yii 2 Ecommerce UNIVO</h1>
    <br>
 
-Proyecto creado en Yii2 con fines educativos para estudiantes de la materia Aplicacion de Frameworks Empresariales. Ciclo 01-2023 de la Universidad de Oriente UNIVO
+Proyecto creado en Yii2 de un ecommcerce. Ciclo 01-2023 y 02-2023 de la Universidad de Oriente UNIVO
 
 Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
 rapidly creating small projects.
@@ -44,7 +44,7 @@ DIRECTORY STRUCTURE
 REQUIREMENTS
 ------------
 
-The minimum requirement by this project template that your Web server supports PHP 7.4.
+The minimum requirement by this project template that your Web server supports PHP 8.1.
 
 
 INSTALLATION
