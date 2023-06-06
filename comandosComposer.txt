@@ -1,0 +1,7 @@
+composer require kartik-v/yii2-editable "dev-master"
+composer require --prefer-dist thamtech/yii2-uuid
+composer require yurkinx/yii2-image
+composer require 2amigos/yii2-gallery-widget:~1.0
+composer require kartik-v/yii2-date-range '@dev'
+composer require coderius/yii2-lightbox2-widget "@dev"
+composer update  
