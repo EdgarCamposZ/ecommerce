@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 06, 2023 at 02:46 AM
+-- Generation Time: Jun 06, 2023 at 05:56 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -250,7 +250,30 @@ INSERT INTO `tbl_bitacora` (`id_bitacora`, `id_registro`, `controlador`, `accion
 (108, 8, 'direcciones', 'create', '\"{\\n    \\\"id_direccion\\\": 8,\\n    \\\"id_cliente\\\": \\\"1\\\",\\n    \\\"contacto\\\": \\\"Moises\\\",\\n    \\\"telefono\\\": \\\"214565333\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 3<\\\\/p>\\\",\\n    \\\"id_departamento\\\": \\\"12\\\",\\n    \\\"id_municipio\\\": \\\"199\\\",\\n    \\\"principal\\\": \\\"0\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-05 20:02:04\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 20:02:04\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', NULL, 1, '2023-06-05 20:02:04'),
 (109, 9, 'direcciones', 'create', '\"{\\n    \\\"id_direccion\\\": 9,\\n    \\\"id_cliente\\\": \\\"1\\\",\\n    \\\"contacto\\\": \\\"Cesar\\\",\\n    \\\"telefono\\\": \\\"13568900\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 4<\\\\/p>\\\",\\n    \\\"id_departamento\\\": \\\"12\\\",\\n    \\\"id_municipio\\\": \\\"199\\\",\\n    \\\"principal\\\": \\\"0\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-05 20:02:43\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 20:02:43\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', NULL, 1, '2023-06-05 20:02:43'),
 (110, 10, 'direcciones', 'create', '\"{\\n    \\\"id_direccion\\\": 10,\\n    \\\"id_cliente\\\": \\\"1\\\",\\n    \\\"contacto\\\": \\\"Fernando\\\",\\n    \\\"telefono\\\": \\\"55578886\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 5<\\\\/p>\\\",\\n    \\\"id_departamento\\\": \\\"12\\\",\\n    \\\"id_municipio\\\": \\\"199\\\",\\n    \\\"principal\\\": \\\"0\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-05 20:03:15\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 20:03:15\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', NULL, 1, '2023-06-05 20:03:15'),
-(111, 11, 'direcciones', 'create', '\"{\\n    \\\"id_direccion\\\": 11,\\n    \\\"id_cliente\\\": \\\"1\\\",\\n    \\\"contacto\\\": \\\"Jaime\\\",\\n    \\\"telefono\\\": \\\"57322222\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 6<\\\\/p>\\\",\\n    \\\"id_departamento\\\": \\\"6\\\",\\n    \\\"id_municipio\\\": \\\"97\\\",\\n    \\\"principal\\\": \\\"0\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-05 20:03:50\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 20:03:50\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', NULL, 1, '2023-06-05 20:03:50');
+(111, 11, 'direcciones', 'create', '\"{\\n    \\\"id_direccion\\\": 11,\\n    \\\"id_cliente\\\": \\\"1\\\",\\n    \\\"contacto\\\": \\\"Jaime\\\",\\n    \\\"telefono\\\": \\\"57322222\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 6<\\\\/p>\\\",\\n    \\\"id_departamento\\\": \\\"6\\\",\\n    \\\"id_municipio\\\": \\\"97\\\",\\n    \\\"principal\\\": \\\"0\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-05 20:03:50\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 20:03:50\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', NULL, 1, '2023-06-05 20:03:50'),
+(112, 5, 'direcciones', 'update', '\"{\\n    \\\"id_direccion\\\": 5,\\n    \\\"id_cliente\\\": 1,\\n    \\\"contacto\\\": \\\"Edgar\\\",\\n    \\\"telefono\\\": \\\"22146477\\\",\\n    \\\"direccion\\\": \\\"<p>Barrio Concepcion<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 12,\\n    \\\"id_municipio\\\": 214,\\n    \\\"principal\\\": 1,\\n    \\\"fecha_ing\\\": \\\"2023-06-03 21:31:02\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-03 21:31:02\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"id_departamento\\\": \\\"12\\\",\\n    \\\"id_municipio\\\": \\\"214\\\",\\n    \\\"principal\\\": \\\"1\\\",\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-06-05 22:43:05'),
+(113, 1, 'clientes', 'update', '\"{\\n    \\\"id_cliente\\\": 1,\\n    \\\"nombre\\\": \\\"Gissel\\\",\\n    \\\"apellido\\\": \\\"Zelaya\\\",\\n    \\\"telefono\\\": \\\"13269076\\\",\\n    \\\"email\\\": \\\"cliente1@cliente.com\\\",\\n    \\\"fecha_ing\\\": \\\"2023-05-31 14:07:40\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-05-31 14:57:49\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-06-05 22:43:17'),
+(114, 10, 'direcciones', 'delete', '\"{\\n    \\\"id_direccion\\\": 10,\\n    \\\"id_cliente\\\": 1,\\n    \\\"contacto\\\": \\\"Fernando\\\",\\n    \\\"telefono\\\": \\\"55578886\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 5<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 12,\\n    \\\"id_municipio\\\": 199,\\n    \\\"principal\\\": 0,\\n    \\\"fecha_ing\\\": \\\"2023-06-05 20:03:15\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 20:03:15\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"estado\\\": 0\\n}\"', 1, '2023-06-05 22:44:13'),
+(115, 10, 'direcciones', 'update', '\"{\\n    \\\"id_direccion\\\": 10,\\n    \\\"id_cliente\\\": 1,\\n    \\\"contacto\\\": \\\"Fernando\\\",\\n    \\\"telefono\\\": \\\"55578886\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 5<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 12,\\n    \\\"id_municipio\\\": 199,\\n    \\\"principal\\\": 0,\\n    \\\"fecha_ing\\\": \\\"2023-06-05 20:03:15\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 22:44:13\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 0\\n}\"', '\"{\\n    \\\"id_departamento\\\": \\\"12\\\",\\n    \\\"id_municipio\\\": \\\"199\\\",\\n    \\\"principal\\\": \\\"0\\\",\\n    \\\"estado\\\": \\\"0\\\"\\n}\"', 1, '2023-06-05 22:44:23');
+INSERT INTO `tbl_bitacora` (`id_bitacora`, `id_registro`, `controlador`, `accion`, `data_original`, `data_modificada`, `id_usuario`, `fecha`) VALUES
+(116, 10, 'direcciones', 'delete', '\"{\\n    \\\"id_direccion\\\": 10,\\n    \\\"id_cliente\\\": 1,\\n    \\\"contacto\\\": \\\"Fernando\\\",\\n    \\\"telefono\\\": \\\"55578886\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 5<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 12,\\n    \\\"id_municipio\\\": 199,\\n    \\\"principal\\\": 0,\\n    \\\"fecha_ing\\\": \\\"2023-06-05 20:03:15\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 22:44:23\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 0\\n}\"', '\"[]\"', 1, '2023-06-05 22:44:23'),
+(117, 10, 'direcciones', 'delete', '\"{\\n    \\\"id_direccion\\\": 10,\\n    \\\"id_cliente\\\": 1,\\n    \\\"contacto\\\": \\\"Fernando\\\",\\n    \\\"telefono\\\": \\\"55578886\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 5<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 12,\\n    \\\"id_municipio\\\": 199,\\n    \\\"principal\\\": 0,\\n    \\\"fecha_ing\\\": \\\"2023-06-05 20:03:15\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 22:44:23\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 0\\n}\"', '\"[]\"', 1, '2023-06-05 22:44:23'),
+(118, 6, 'direcciones', 'delete', '\"{\\n    \\\"id_direccion\\\": 6,\\n    \\\"id_cliente\\\": 1,\\n    \\\"contacto\\\": \\\"Marie\\\",\\n    \\\"telefono\\\": \\\"22146477\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 2<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 2,\\n    \\\"id_municipio\\\": 13,\\n    \\\"principal\\\": 0,\\n    \\\"fecha_ing\\\": \\\"2023-06-05 17:45:54\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 17:45:54\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 0\\n}\"', '\"[]\"', 1, '2023-06-05 17:45:54'),
+(119, 6, 'direcciones', 'delete', '\"{\\n    \\\"id_direccion\\\": 6,\\n    \\\"id_cliente\\\": 1,\\n    \\\"contacto\\\": \\\"Marie\\\",\\n    \\\"telefono\\\": \\\"22146477\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 2<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 2,\\n    \\\"id_municipio\\\": 13,\\n    \\\"principal\\\": 0,\\n    \\\"fecha_ing\\\": \\\"2023-06-05 17:45:54\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 17:45:54\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 0\\n}\"', '\"[]\"', 1, '2023-06-05 17:45:54'),
+(120, 6, 'direcciones', 'update', '\"{\\n    \\\"id_direccion\\\": 6,\\n    \\\"id_cliente\\\": 1,\\n    \\\"contacto\\\": \\\"Marie\\\",\\n    \\\"telefono\\\": \\\"22146477\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 2<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 2,\\n    \\\"id_municipio\\\": 13,\\n    \\\"principal\\\": 0,\\n    \\\"fecha_ing\\\": \\\"2023-06-05 17:45:54\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 17:45:54\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 0\\n}\"', '\"{\\n    \\\"id_departamento\\\": \\\"2\\\",\\n    \\\"id_municipio\\\": \\\"13\\\",\\n    \\\"principal\\\": \\\"0\\\",\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-06-05 22:59:59'),
+(121, 6, 'direcciones', 'delete', '\"{\\n    \\\"id_direccion\\\": 6,\\n    \\\"id_cliente\\\": 1,\\n    \\\"contacto\\\": \\\"Marie\\\",\\n    \\\"telefono\\\": \\\"22146477\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 2<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 2,\\n    \\\"id_municipio\\\": 13,\\n    \\\"principal\\\": 0,\\n    \\\"fecha_ing\\\": \\\"2023-06-05 17:45:54\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 22:59:59\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"estado\\\": 0\\n}\"', 1, '2023-06-05 23:00:02'),
+(122, 6, 'direcciones', 'update', '\"{\\n    \\\"id_direccion\\\": 6,\\n    \\\"id_cliente\\\": 1,\\n    \\\"contacto\\\": \\\"Marie\\\",\\n    \\\"telefono\\\": \\\"22146477\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 2<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 2,\\n    \\\"id_municipio\\\": 13,\\n    \\\"principal\\\": 0,\\n    \\\"fecha_ing\\\": \\\"2023-06-05 17:45:54\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 23:00:02\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 0\\n}\"', '\"{\\n    \\\"id_departamento\\\": \\\"2\\\",\\n    \\\"id_municipio\\\": \\\"13\\\",\\n    \\\"principal\\\": \\\"0\\\",\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-06-05 23:01:56'),
+(123, 6, 'direcciones', 'delete', '\"{\\n    \\\"id_direccion\\\": 6,\\n    \\\"id_cliente\\\": 1,\\n    \\\"contacto\\\": \\\"Marie\\\",\\n    \\\"telefono\\\": \\\"22146477\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 2<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 2,\\n    \\\"id_municipio\\\": 13,\\n    \\\"principal\\\": 0,\\n    \\\"fecha_ing\\\": \\\"2023-06-05 17:45:54\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 23:01:56\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"estado\\\": 0\\n}\"', 1, '2023-06-05 23:01:59'),
+(124, 6, 'direcciones', 'update', '\"{\\n    \\\"id_direccion\\\": 6,\\n    \\\"id_cliente\\\": 1,\\n    \\\"contacto\\\": \\\"Marie\\\",\\n    \\\"telefono\\\": \\\"22146477\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 2<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 2,\\n    \\\"id_municipio\\\": 13,\\n    \\\"principal\\\": 0,\\n    \\\"fecha_ing\\\": \\\"2023-06-05 17:45:54\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 23:01:59\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 0\\n}\"', '\"{\\n    \\\"id_departamento\\\": \\\"2\\\",\\n    \\\"id_municipio\\\": \\\"13\\\",\\n    \\\"principal\\\": \\\"0\\\",\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-06-05 23:02:05'),
+(125, 6, 'direcciones', 'delete', '\"{\\n    \\\"id_direccion\\\": 6,\\n    \\\"id_cliente\\\": 1,\\n    \\\"contacto\\\": \\\"Marie\\\",\\n    \\\"telefono\\\": \\\"22146477\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 2<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 2,\\n    \\\"id_municipio\\\": 13,\\n    \\\"principal\\\": 0,\\n    \\\"fecha_ing\\\": \\\"2023-06-05 17:45:54\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 23:02:05\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"estado\\\": 0\\n}\"', 1, '2023-06-05 23:02:10'),
+(126, 6, 'direcciones', 'update', '\"{\\n    \\\"id_direccion\\\": 6,\\n    \\\"id_cliente\\\": 1,\\n    \\\"contacto\\\": \\\"Marie\\\",\\n    \\\"telefono\\\": \\\"22146477\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 2<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 2,\\n    \\\"id_municipio\\\": 13,\\n    \\\"principal\\\": 0,\\n    \\\"fecha_ing\\\": \\\"2023-06-05 17:45:54\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 23:02:10\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 0\\n}\"', '\"{\\n    \\\"id_departamento\\\": \\\"2\\\",\\n    \\\"id_municipio\\\": \\\"13\\\",\\n    \\\"principal\\\": \\\"0\\\",\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-06-05 23:02:16'),
+(127, 10, 'direcciones', 'update', '\"{\\n    \\\"id_direccion\\\": 10,\\n    \\\"id_cliente\\\": 1,\\n    \\\"contacto\\\": \\\"Fernando\\\",\\n    \\\"telefono\\\": \\\"55578886\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 5<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 12,\\n    \\\"id_municipio\\\": 199,\\n    \\\"principal\\\": 0,\\n    \\\"fecha_ing\\\": \\\"2023-06-05 20:03:15\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 22:44:23\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 0\\n}\"', '\"{\\n    \\\"id_departamento\\\": \\\"12\\\",\\n    \\\"id_municipio\\\": \\\"199\\\",\\n    \\\"principal\\\": \\\"0\\\",\\n    \\\"estado\\\": \\\"0\\\"\\n}\"', 1, '2023-06-05 23:02:45'),
+(128, 1, 'clientes', 'update', '\"{\\n    \\\"id_cliente\\\": 1,\\n    \\\"nombre\\\": \\\"Gissel\\\",\\n    \\\"apellido\\\": \\\"Zelaya\\\",\\n    \\\"telefono\\\": \\\"13269076\\\",\\n    \\\"email\\\": \\\"cliente1@cliente.com\\\",\\n    \\\"fecha_ing\\\": \\\"2023-05-31 14:07:40\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 22:43:17\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-06-05 23:02:56'),
+(129, 1, 'clientes', 'delete', '\"{\\n    \\\"id_cliente\\\": 1,\\n    \\\"nombre\\\": \\\"Gissel\\\",\\n    \\\"apellido\\\": \\\"Zelaya\\\",\\n    \\\"telefono\\\": \\\"13269076\\\",\\n    \\\"email\\\": \\\"cliente1@cliente.com\\\",\\n    \\\"fecha_ing\\\": \\\"2023-05-31 14:07:40\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 23:02:56\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"estado\\\": 0\\n}\"', 1, '2023-06-05 23:03:01'),
+(130, 1, 'clientes', 'update', '\"{\\n    \\\"id_cliente\\\": 1,\\n    \\\"nombre\\\": \\\"Gissel\\\",\\n    \\\"apellido\\\": \\\"Zelaya\\\",\\n    \\\"telefono\\\": \\\"13269076\\\",\\n    \\\"email\\\": \\\"cliente1@cliente.com\\\",\\n    \\\"fecha_ing\\\": \\\"2023-05-31 14:07:40\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 23:03:01\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 0\\n}\"', '\"{\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-06-05 23:03:06'),
+(131, 10, 'direcciones', 'delete', '\"{\\n    \\\"id_direccion\\\": 10,\\n    \\\"id_cliente\\\": 1,\\n    \\\"contacto\\\": \\\"Fernando\\\",\\n    \\\"telefono\\\": \\\"55578886\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 5<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 12,\\n    \\\"id_municipio\\\": 199,\\n    \\\"principal\\\": 0,\\n    \\\"fecha_ing\\\": \\\"2023-06-05 20:03:15\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 23:02:45\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 0\\n}\"', '\"[]\"', 1, '2023-06-05 23:02:45'),
+(132, 10, 'direcciones', 'update', '\"{\\n    \\\"id_direccion\\\": 10,\\n    \\\"id_cliente\\\": 1,\\n    \\\"contacto\\\": \\\"Fernando\\\",\\n    \\\"telefono\\\": \\\"55578886\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 5<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 12,\\n    \\\"id_municipio\\\": 199,\\n    \\\"principal\\\": 0,\\n    \\\"fecha_ing\\\": \\\"2023-06-05 20:03:15\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 23:02:45\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 0\\n}\"', '\"{\\n    \\\"id_departamento\\\": \\\"12\\\",\\n    \\\"id_municipio\\\": \\\"199\\\",\\n    \\\"principal\\\": \\\"0\\\",\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-06-05 23:23:34'),
+(133, 12, 'direcciones', 'create', '\"{\\n    \\\"id_direccion\\\": 12,\\n    \\\"id_cliente\\\": \\\"2\\\",\\n    \\\"contacto\\\": \\\"Fernando\\\",\\n    \\\"telefono\\\": \\\"22146477\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 2<\\\\/p>\\\",\\n    \\\"id_departamento\\\": \\\"12\\\",\\n    \\\"id_municipio\\\": \\\"211\\\",\\n    \\\"principal\\\": \\\"0\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-05 23:43:19\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 23:43:19\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', NULL, 1, '2023-06-05 23:43:19');
 
 -- --------------------------------------------------------
 
@@ -287,23 +310,23 @@ INSERT INTO `tbl_categorias` (`id_categoria`, `nombre`, `descripcion`, `fecha_in
 
 CREATE TABLE `tbl_clientes` (
   `id_cliente` int NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `apellido` varchar(100) NOT NULL,
-  `telefono` varchar(11) NOT NULL,
-  `email` varchar(200) NOT NULL,
+  `nombre` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `apellido` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `telefono` varchar(11) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `email` varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `fecha_ing` datetime DEFAULT NULL,
   `id_usuario_ing` int DEFAULT NULL,
   `fecha_mod` datetime DEFAULT NULL,
   `id_usuario_mod` int DEFAULT NULL,
   `estado` tinyint NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Dumping data for table `tbl_clientes`
 --
 
 INSERT INTO `tbl_clientes` (`id_cliente`, `nombre`, `apellido`, `telefono`, `email`, `fecha_ing`, `id_usuario_ing`, `fecha_mod`, `id_usuario_mod`, `estado`) VALUES
-(1, 'Gissel', 'Zelaya', '13269076', 'cliente1@cliente.com', '2023-05-31 14:07:40', 1, '2023-05-31 14:57:49', 1, 1),
+(1, 'Gissel', 'Zelaya', '13269076', 'cliente1@cliente.com', '2023-05-31 14:07:40', 1, '2023-06-05 23:03:06', 1, 1),
 (2, 'Edgar', 'Campos', '31457777', 'cliente2@cliente.com', '2023-06-05 18:37:46', 1, '2023-06-05 18:37:46', 1, 1);
 
 -- --------------------------------------------------------
@@ -314,19 +337,19 @@ INSERT INTO `tbl_clientes` (`id_cliente`, `nombre`, `apellido`, `telefono`, `ema
 
 CREATE TABLE `tbl_compras` (
   `id_compra` int NOT NULL,
-  `codigo` varchar(10) NOT NULL,
-  `num_factura` varchar(10) NOT NULL,
+  `codigo` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `num_factura` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `id_proveedor` int NOT NULL,
   `tipo_compra` tinyint(1) NOT NULL,
   `fecha` date NOT NULL,
   `anulado` tinyint(1) NOT NULL DEFAULT '0',
-  `comentarios` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `comentarios` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci,
   `fecha_ing` datetime DEFAULT NULL,
   `id_usuario_ing` int DEFAULT NULL,
   `fecha_mod` datetime DEFAULT NULL,
   `id_usuario_mod` int DEFAULT NULL,
   `estado` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Dumping data for table `tbl_compras`
@@ -380,12 +403,12 @@ CREATE TABLE `tbl_det_compras` (
   `cantidad` int NOT NULL,
   `costo` decimal(10,2) NOT NULL,
   `descuento` decimal(10,2) NOT NULL,
-  `uuid` varchar(36) NOT NULL,
+  `uuid` varchar(36) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `fecha_ing` datetime DEFAULT NULL,
   `id_usuario_ing` int DEFAULT NULL,
   `fecha_mod` datetime DEFAULT NULL,
   `id_usuario_mod` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Dumping data for table `tbl_det_compras`
@@ -405,9 +428,9 @@ INSERT INTO `tbl_det_compras` (`id_det_compra`, `id_compra`, `id_producto`, `can
 CREATE TABLE `tbl_direcciones` (
   `id_direccion` int NOT NULL,
   `id_cliente` int NOT NULL,
-  `contacto` varchar(100) NOT NULL,
-  `telefono` varchar(11) NOT NULL,
-  `direccion` text NOT NULL,
+  `contacto` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `telefono` varchar(11) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `direccion` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `id_departamento` int NOT NULL,
   `id_municipio` int NOT NULL,
   `principal` tinyint NOT NULL,
@@ -416,19 +439,20 @@ CREATE TABLE `tbl_direcciones` (
   `fecha_mod` datetime DEFAULT NULL,
   `id_usuario_mod` int DEFAULT NULL,
   `estado` tinyint NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Dumping data for table `tbl_direcciones`
 --
 
 INSERT INTO `tbl_direcciones` (`id_direccion`, `id_cliente`, `contacto`, `telefono`, `direccion`, `id_departamento`, `id_municipio`, `principal`, `fecha_ing`, `id_usuario_ing`, `fecha_mod`, `id_usuario_mod`, `estado`) VALUES
-(5, 1, 'Edgar', '22146477', '<p>Barrio Concepcion</p>', 12, 214, 1, '2023-06-03 21:31:02', 1, '2023-06-03 21:31:02', 1, 1),
-(6, 1, 'Marie', '22146477', '<p>Direccion 2</p>', 2, 13, 0, '2023-06-05 17:45:54', 1, '2023-06-05 17:45:54', 1, 0),
+(5, 1, 'Edgar', '22146477', '<p>Barrio Concepcion</p>', 12, 214, 1, '2023-06-03 21:31:02', 1, '2023-06-05 22:43:05', 1, 1),
+(6, 1, 'Marie', '22146477', '<p>Direccion 2</p>', 2, 13, 0, '2023-06-05 17:45:54', 1, '2023-06-05 23:02:16', 1, 1),
 (7, 2, 'Benito', '24224445', '<p>Direccion Principal</p>', 12, 214, 1, '2023-06-05 18:39:27', 1, '2023-06-05 18:39:27', 1, 1),
 (8, 1, 'Moises', '214565333', '<p>Direccion 3</p>', 12, 199, 0, '2023-06-05 20:02:04', 1, '2023-06-05 20:02:04', 1, 1),
 (9, 1, 'Cesar', '13568900', '<p>Direccion 4</p>', 12, 199, 0, '2023-06-05 20:02:43', 1, '2023-06-05 20:02:43', 1, 1),
-(10, 1, 'Fernando', '55578886', '<p>Direccion 5</p>', 12, 199, 0, '2023-06-05 20:03:15', 1, '2023-06-05 20:03:15', 1, 1);
+(10, 1, 'Fernando', '55578886', '<p>Direccion 5</p>', 12, 199, 0, '2023-06-05 20:03:15', 1, '2023-06-05 23:23:34', 1, 1),
+(12, 2, 'Fernando', '22146477', '<p>Direccion 2</p>', 12, 211, 0, '2023-06-05 23:43:19', 1, '2023-06-05 23:43:19', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -488,7 +512,13 @@ INSERT INTO `tbl_error_log` (`id_error_log`, `controller`, `mensaje`, `us_id`, `
 (36, 'direcciones/create', 'Exception: Fecha cannot be blank. in C:\\laragon\\www\\ecommerce\\modules\\clientes\\controllers\\DireccionesController.php:96<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\clientes\\controllers\\DireccionesController-&gt;actionCreate()<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;clientes/direcc...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-03 21:27:04'),
 (37, 'direcciones/create', 'Exception: Fecha cannot be blank. in C:\\laragon\\www\\ecommerce\\modules\\clientes\\controllers\\DireccionesController.php:96<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\clientes\\controllers\\DireccionesController-&gt;actionCreate()<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;clientes/direcc...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-03 21:28:13'),
 (38, 'direcciones/create', 'Exception: Id Cliente cannot be blank. in C:\\laragon\\www\\ecommerce\\modules\\clientes\\controllers\\DireccionesController.php:81<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\clientes\\controllers\\DireccionesController-&gt;actionCreate()<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;clientes/direcc...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-05 16:37:25'),
-(39, 'direcciones/create', 'Exception: Id Cliente cannot be blank. in C:\\laragon\\www\\ecommerce\\modules\\clientes\\controllers\\DireccionesController.php:81<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\clientes\\controllers\\DireccionesController-&gt;actionCreate()<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;clientes/direcc...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-05 16:41:22');
+(39, 'direcciones/create', 'Exception: Id Cliente cannot be blank. in C:\\laragon\\www\\ecommerce\\modules\\clientes\\controllers\\DireccionesController.php:81<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\clientes\\controllers\\DireccionesController-&gt;actionCreate()<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;clientes/direcc...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-05 16:41:22'),
+(40, 'direcciones/update', 'Exception: Ya existe otra dirección principal para este cliente. in C:\\laragon\\www\\ecommerce\\modules\\clientes\\controllers\\DireccionesController.php:135<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\clientes\\controllers\\DireccionesController-&gt;actionUpdate(&#039;6&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;update&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;clientes/direcc...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-05 23:16:01'),
+(41, 'direcciones/update', 'yii\\base\\UnknownPropertyException: Getting unknown property: app\\modules\\clientes\\models\\Direcciones::cliente_id in C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Component.php:154<br />\nStack trace:<br />\n#0 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\db\\BaseActiveRecord.php(296): yii\\base\\Component-&gt;__get(&#039;cliente_id&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\modules\\clientes\\models\\Direcciones.php(88): yii\\db\\BaseActiveRecord-&gt;__get(&#039;cliente_id&#039;)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\validators\\InlineValidator.php(77): app\\modules\\clientes\\models\\Direcciones-&gt;validatePrincipal(&#039;principal&#039;, NULL, Object(yii\\validators\\InlineValidator), &#039;1&#039;)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\validators\\Validator.php(260): yii\\validators\\InlineValidator-&gt;validateAttribute(Object(app\\modules\\clientes\\models\\Direcciones), &#039;principal&#039;)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Model.php(368): yii\\validators\\Validator-&gt;validateAttributes(Object(app\\modules\\clientes\\models\\Direcciones), Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\db\\ActiveRecord.php(674): yii\\base\\Model-&gt;validate(Array)<br />\n#6 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\db\\BaseActiveRecord.php(679): yii\\db\\ActiveRecord-&gt;update(true, NULL)<br />\n#7 C:\\laragon\\www\\ecommerce\\modules\\clientes\\controllers\\DireccionesController.php(136): yii\\db\\BaseActiveRecord-&gt;save()<br />\n#8 [internal function]: app\\modules\\clientes\\controllers\\DireccionesController-&gt;actionUpdate(&#039;10&#039;)<br />\n#9 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#10 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#11 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;update&#039;, Array)<br />\n#12 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;clientes/direcc...&#039;, Array)<br />\n#13 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#14 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#15 {main}', 1, '2023-06-05 23:18:16'),
+(42, 'direcciones/update', 'Exception: Ya existe otra dirección principal para este cliente. in C:\\laragon\\www\\ecommerce\\modules\\clientes\\controllers\\DireccionesController.php:137<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\clientes\\controllers\\DireccionesController-&gt;actionUpdate(&#039;10&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;update&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;clientes/direcc...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-05 23:23:16'),
+(43, 'direcciones/create', 'Exception: Ya existe otra dirección principal para este cliente. in C:\\laragon\\www\\ecommerce\\modules\\clientes\\controllers\\DireccionesController.php:85<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\clientes\\controllers\\DireccionesController-&gt;actionCreate(&#039;1&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;clientes/direcc...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-05 23:24:12'),
+(44, 'direcciones/create', 'Exception: Ya existe otra dirección principal para este cliente. in C:\\laragon\\www\\ecommerce\\modules\\clientes\\controllers\\DireccionesController.php:85<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\clientes\\controllers\\DireccionesController-&gt;actionCreate(&#039;1&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;clientes/direcc...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-05 23:24:54'),
+(45, 'direcciones/update', 'Exception: Ya existe otra dirección principal para este cliente. in C:\\laragon\\www\\ecommerce\\modules\\clientes\\controllers\\DireccionesController.php:142<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\clientes\\controllers\\DireccionesController-&gt;actionUpdate(&#039;12&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;update&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;clientes/direcc...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-05 23:43:46');
 
 -- --------------------------------------------------------
 
@@ -869,19 +899,19 @@ INSERT INTO `tbl_productos_imagenes` (`id_producto_imagen`, `id_producto`, `imag
 
 CREATE TABLE `tbl_proveedores` (
   `id_proveedor` int NOT NULL,
-  `codigo` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `nombre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `direccion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `codigo` varchar(25) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `nombre` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `direccion` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `id_departamento` int NOT NULL,
   `id_municipio` int NOT NULL,
-  `telefono` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `telefono` varchar(25) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `email` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `fecha_ing` datetime DEFAULT NULL,
   `id_usuario_ing` int DEFAULT NULL,
   `fecha_mod` datetime DEFAULT NULL,
   `id_usuario_mod` int DEFAULT NULL,
   `estado` tinyint NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Dumping data for table `tbl_proveedores`
@@ -1120,7 +1150,7 @@ ALTER TABLE `tbl_usuarios`
 -- AUTO_INCREMENT for table `tbl_bitacora`
 --
 ALTER TABLE `tbl_bitacora`
-  MODIFY `id_bitacora` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
+  MODIFY `id_bitacora` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
 
 --
 -- AUTO_INCREMENT for table `tbl_categorias`
@@ -1156,13 +1186,13 @@ ALTER TABLE `tbl_det_compras`
 -- AUTO_INCREMENT for table `tbl_direcciones`
 --
 ALTER TABLE `tbl_direcciones`
-  MODIFY `id_direccion` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_direccion` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tbl_error_log`
 --
 ALTER TABLE `tbl_error_log`
-  MODIFY `id_error_log` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id_error_log` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `tbl_marcas`
