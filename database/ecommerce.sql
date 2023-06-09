@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 09, 2023 at 03:27 PM
+-- Generation Time: Jun 09, 2023 at 05:14 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -282,7 +282,11 @@ INSERT INTO `tbl_bitacora` (`id_bitacora`, `id_registro`, `controlador`, `accion
 (137, 2, 'inventario', 'create', '\"{\\n    \\\"id_inventario\\\": 2,\\n    \\\"id_producto\\\": \\\"8\\\",\\n    \\\"existencias\\\": \\\"10\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-08 23:26:29\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-08 23:26:29\\\",\\n    \\\"id_usuario_mod\\\": 1\\n}\"', NULL, 1, '2023-06-08 23:26:29'),
 (138, 1, 'ordenes', 'create', '\"{\\n    \\\"id_orden\\\": 1,\\n    \\\"id_cliente\\\": \\\"2\\\",\\n    \\\"id_direccion\\\": \\\"7\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-08 23:48:18\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-08 23:48:18\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 0\\n}\"', NULL, 1, '2023-06-08 23:48:18'),
 (139, 1, 'det-ordenes', 'create', '\"{\\n    \\\"id_det_orden\\\": 1,\\n    \\\"id_orden\\\": \\\"1\\\",\\n    \\\"id_producto\\\": \\\"8\\\",\\n    \\\"id_inventario\\\": \\\"2\\\",\\n    \\\"cantidad\\\": \\\"1\\\",\\n    \\\"descuento\\\": \\\"0.00\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-09 09:04:48\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-09 09:04:48\\\",\\n    \\\"id_usuario_mod\\\": 1\\n}\"', NULL, 1, '2023-06-09 09:04:48'),
-(140, 2, 'det-ordenes', 'create', '\"{\\n    \\\"id_det_orden\\\": 2,\\n    \\\"id_orden\\\": \\\"1\\\",\\n    \\\"id_producto\\\": \\\"8\\\",\\n    \\\"id_inventario\\\": \\\"2\\\",\\n    \\\"cantidad\\\": \\\"1\\\",\\n    \\\"descuento\\\": \\\"0.00\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-09 09:11:25\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-09 09:11:25\\\",\\n    \\\"id_usuario_mod\\\": 1\\n}\"', NULL, 1, '2023-06-09 09:11:25');
+(140, 2, 'det-ordenes', 'create', '\"{\\n    \\\"id_det_orden\\\": 2,\\n    \\\"id_orden\\\": \\\"1\\\",\\n    \\\"id_producto\\\": \\\"8\\\",\\n    \\\"id_inventario\\\": \\\"2\\\",\\n    \\\"cantidad\\\": \\\"1\\\",\\n    \\\"descuento\\\": \\\"0.00\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-09 09:11:25\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-09 09:11:25\\\",\\n    \\\"id_usuario_mod\\\": 1\\n}\"', NULL, 1, '2023-06-09 09:11:25'),
+(141, 1, 'compras', 'inventario', '\"{\\n    \\\"id_compra\\\": 1,\\n    \\\"codigo\\\": \\\"CMPR-00001\\\",\\n    \\\"num_factura\\\": \\\"42521\\\",\\n    \\\"id_proveedor\\\": 1,\\n    \\\"tipo_compra\\\": 0,\\n    \\\"fecha\\\": \\\"2023-05-20\\\",\\n    \\\"anulado\\\": 0,\\n    \\\"comentarios\\\": \\\"<p>Escribimos los comentarios de la compra<\\\\/p>\\\",\\n    \\\"fecha_ing\\\": \\\"2023-05-29 22:37:54\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-05-29 22:37:54\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 0\\n}\"', '\"{\\n    \\\"estado\\\": 1\\n}\"', 1, '2023-06-09 11:02:11'),
+(142, 1, 'compras', 'inventario', '\"{\\n    \\\"id_compra\\\": 1,\\n    \\\"codigo\\\": \\\"CMPR-00001\\\",\\n    \\\"num_factura\\\": \\\"42521\\\",\\n    \\\"id_proveedor\\\": 1,\\n    \\\"tipo_compra\\\": 0,\\n    \\\"fecha\\\": \\\"2023-05-20\\\",\\n    \\\"anulado\\\": 0,\\n    \\\"comentarios\\\": \\\"<p>Escribimos los comentarios de la compra<\\\\/p>\\\",\\n    \\\"fecha_ing\\\": \\\"2023-05-29 22:37:54\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-09 11:02:11\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"[]\"', 1, '2023-06-09 11:02:11'),
+(143, 1, 'compras', 'inventario', '\"{\\n    \\\"id_compra\\\": 1,\\n    \\\"codigo\\\": \\\"CMPR-00001\\\",\\n    \\\"num_factura\\\": \\\"42521\\\",\\n    \\\"id_proveedor\\\": 1,\\n    \\\"tipo_compra\\\": 0,\\n    \\\"fecha\\\": \\\"2023-05-20\\\",\\n    \\\"anulado\\\": 0,\\n    \\\"comentarios\\\": \\\"<p>Escribimos los comentarios de la compra<\\\\/p>\\\",\\n    \\\"fecha_ing\\\": \\\"2023-05-29 22:37:54\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-09 11:02:11\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"[]\"', 1, '2023-06-09 11:02:11'),
+(144, 3, 'det-ordenes', 'create', '\"{\\n    \\\"id_det_orden\\\": 3,\\n    \\\"id_orden\\\": \\\"1\\\",\\n    \\\"id_producto\\\": \\\"8\\\",\\n    \\\"id_inventario\\\": \\\"3\\\",\\n    \\\"cantidad\\\": \\\"1\\\",\\n    \\\"descuento\\\": \\\"0.00\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-09 11:11:42\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-09 11:11:42\\\",\\n    \\\"id_usuario_mod\\\": 1\\n}\"', NULL, 1, '2023-06-09 11:11:42');
 
 -- --------------------------------------------------------
 
@@ -365,7 +369,7 @@ CREATE TABLE `tbl_compras` (
 --
 
 INSERT INTO `tbl_compras` (`id_compra`, `codigo`, `num_factura`, `id_proveedor`, `tipo_compra`, `fecha`, `anulado`, `comentarios`, `fecha_ing`, `id_usuario_ing`, `fecha_mod`, `id_usuario_mod`, `estado`) VALUES
-(1, 'CMPR-00001', '42521', 1, 0, '2023-05-20', 0, '<p>Escribimos los comentarios de la compra</p>', '2023-05-29 22:37:54', 1, '2023-05-29 22:37:54', 1, 0);
+(1, 'CMPR-00001', '42521', 1, 0, '2023-05-20', 0, '<p>Escribimos los comentarios de la compra</p>', '2023-05-29 22:37:54', 1, '2023-06-09 11:02:11', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -424,7 +428,7 @@ CREATE TABLE `tbl_det_compras` (
 --
 
 INSERT INTO `tbl_det_compras` (`id_det_compra`, `id_compra`, `id_producto`, `cantidad`, `costo`, `descuento`, `uuid`, `fecha_ing`, `id_usuario_ing`, `fecha_mod`, `id_usuario_mod`) VALUES
-(1, 1, 8, 10, '659.99', '12.00', '42e5e43e-634b-4a6e-b9f1-516d945fafa2', '2023-05-31 11:07:18', 1, '2023-06-04 13:43:01', 1),
+(1, 1, 8, 25, '659.99', '12.00', '42e5e43e-634b-4a6e-b9f1-516d945fafa2', '2023-05-31 11:07:18', 1, '2023-06-09 11:00:44', 1),
 (2, 1, 9, 30, '399.99', '0.00', 'd3b24136-a312-414d-ad32-72c92446b6fe', '2023-05-31 11:39:14', 1, '2023-06-05 17:10:54', 1),
 (3, 1, 10, 10, '299.99', '5.00', '7aad2da0-2b46-4aea-bdbb-6050660dcb51', '2023-06-03 22:20:04', 1, '2023-06-03 22:20:04', 1);
 
@@ -452,7 +456,7 @@ CREATE TABLE `tbl_det_ordenes` (
 --
 
 INSERT INTO `tbl_det_ordenes` (`id_det_orden`, `id_orden`, `id_producto`, `id_inventario`, `cantidad`, `descuento`, `fecha_ing`, `id_usuario_ing`, `fecha_mod`, `id_usuario_mod`) VALUES
-(2, 1, 8, 2, 1, '0.00', '2023-06-09 09:11:25', 1, '2023-06-09 09:11:25', 1);
+(3, 1, 8, 3, 1, '0.00', '2023-06-09 11:11:42', 1, '2023-06-09 11:11:42', 1);
 
 -- --------------------------------------------------------
 
@@ -560,7 +564,10 @@ INSERT INTO `tbl_error_log` (`id_error_log`, `controller`, `mensaje`, `us_id`, `
 (48, 'inventario/create', 'Exception: Id Inventario cannot be blank. in C:\\laragon\\www\\ecommerce\\modules\\productos\\controllers\\InventarioController.php:81<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\productos\\controllers\\InventarioController-&gt;actionCreate()<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;productos/inven...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-08 22:32:56'),
 (49, 'inventario/create', 'Exception: Id Inventario cannot be blank. in C:\\laragon\\www\\ecommerce\\modules\\productos\\controllers\\InventarioController.php:81<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\productos\\controllers\\InventarioController-&gt;actionCreate()<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;productos/inven...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-08 22:34:48'),
 (50, 'det-ordenes/create', 'Exception: Id Producto is invalid. in C:\\laragon\\www\\ecommerce\\modules\\ordenes\\controllers\\DetOrdenesController.php:112<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\ordenes\\controllers\\DetOrdenesController-&gt;actionCreate(&#039;1&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;ordenes/det-ord...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-09 09:02:15'),
-(51, 'det-ordenes/create', 'Exception: Id Producto is invalid. in C:\\laragon\\www\\ecommerce\\modules\\ordenes\\controllers\\DetOrdenesController.php:112<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\ordenes\\controllers\\DetOrdenesController-&gt;actionCreate(&#039;1&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;ordenes/det-ord...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-09 09:03:18');
+(51, 'det-ordenes/create', 'Exception: Id Producto is invalid. in C:\\laragon\\www\\ecommerce\\modules\\ordenes\\controllers\\DetOrdenesController.php:112<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\ordenes\\controllers\\DetOrdenesController-&gt;actionCreate(&#039;1&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;ordenes/det-ord...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-09 09:03:18'),
+(52, 'compras/inventario', 'Exception: Id Producto is invalid. in C:\\laragon\\www\\ecommerce\\modules\\compras\\controllers\\ComprasController.php:221<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\compras\\controllers\\ComprasController-&gt;actionInventario(&#039;1&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;inventario&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;compras/compras...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-09 10:58:14'),
+(53, 'compras/inventario', 'Exception: Id Producto is invalid. in C:\\laragon\\www\\ecommerce\\modules\\compras\\controllers\\ComprasController.php:235<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\compras\\controllers\\ComprasController-&gt;actionInventario(&#039;1&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;inventario&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;compras/compras...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-09 10:58:56'),
+(54, 'compras/inventario', 'Exception: Estado must be an integer. in C:\\laragon\\www\\ecommerce\\modules\\compras\\controllers\\ComprasController.php:243<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\compras\\controllers\\ComprasController-&gt;actionInventario(&#039;1&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;inventario&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;compras/compras...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-09 11:00:05');
 
 -- --------------------------------------------------------
 
@@ -570,20 +577,50 @@ INSERT INTO `tbl_error_log` (`id_error_log`, `controller`, `mensaje`, `us_id`, `
 
 CREATE TABLE `tbl_inventario` (
   `id_inventario` int NOT NULL,
+  `uuid` varchar(36) NOT NULL,
   `id_producto` int NOT NULL,
-  `existencias` int NOT NULL,
+  `existencia` int NOT NULL,
+  `existencia_original` int NOT NULL,
   `fecha_ing` datetime DEFAULT NULL,
-  `id_usuario_ing` int DEFAULT NULL,
-  `fecha_mod` datetime DEFAULT NULL,
-  `id_usuario_mod` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish_ci;
+  `id_usuario_ing` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl_inventario`
 --
 
-INSERT INTO `tbl_inventario` (`id_inventario`, `id_producto`, `existencias`, `fecha_ing`, `id_usuario_ing`, `fecha_mod`, `id_usuario_mod`) VALUES
-(2, 8, 10, '2023-06-08 23:26:29', 1, '2023-06-08 23:26:29', 1);
+INSERT INTO `tbl_inventario` (`id_inventario`, `uuid`, `id_producto`, `existencia`, `existencia_original`, `fecha_ing`, `id_usuario_ing`) VALUES
+(3, '42e5e43e-634b-4a6e-b9f1-516d945fafa2', 8, 25, 25, '2023-06-09 11:02:11', 1),
+(4, 'd3b24136-a312-414d-ad32-72c92446b6fe', 9, 30, 30, '2023-06-09 11:02:11', 1),
+(5, '7aad2da0-2b46-4aea-bdbb-6050660dcb51', 10, 10, 10, '2023-06-09 11:02:11', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_kardex`
+--
+
+CREATE TABLE `tbl_kardex` (
+  `id_kardex` int NOT NULL,
+  `id_documento` int NOT NULL,
+  `cod_documento` varchar(25) NOT NULL,
+  `num_documento` varchar(25) NOT NULL,
+  `tipo_documento` varchar(25) NOT NULL,
+  `id_producto` int NOT NULL,
+  `cantidad` int NOT NULL,
+  `uuid` varchar(36) NOT NULL,
+  `fecha_ing` datetime DEFAULT NULL,
+  `id_usuario_ing` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tbl_kardex`
+--
+
+INSERT INTO `tbl_kardex` (`id_kardex`, `id_documento`, `cod_documento`, `num_documento`, `tipo_documento`, `id_producto`, `cantidad`, `uuid`, `fecha_ing`, `id_usuario_ing`) VALUES
+(2, 1, 'CMPR-00001', '42521', 'COMPRA', 8, 25, '42e5e43e-634b-4a6e-b9f1-516d945fafa2', '2023-06-09 11:02:11', 1),
+(3, 1, 'CMPR-00001', '42521', 'COMPRA', 9, 30, 'd3b24136-a312-414d-ad32-72c92446b6fe', '2023-06-09 11:02:11', 1),
+(4, 1, 'CMPR-00001', '42521', 'COMPRA', 10, 10, '7aad2da0-2b46-4aea-bdbb-6050660dcb51', '2023-06-09 11:02:11', 1);
 
 -- --------------------------------------------------------
 
@@ -911,7 +948,7 @@ CREATE TABLE `tbl_ordenes` (
   `fecha_mod` datetime DEFAULT NULL,
   `id_usuario_mod` int DEFAULT NULL,
   `estado` tinyint NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl_ordenes`
@@ -1185,9 +1222,16 @@ ALTER TABLE `tbl_error_log`
 --
 ALTER TABLE `tbl_inventario`
   ADD PRIMARY KEY (`id_inventario`),
-  ADD KEY `fk_producto` (`id_producto`),
-  ADD KEY `id_usuario_ing` (`id_usuario_ing`),
-  ADD KEY `id_usuario_mod` (`id_usuario_mod`);
+  ADD KEY `id_producto` (`id_producto`),
+  ADD KEY `id_usuario_ing` (`id_usuario_ing`);
+
+--
+-- Indexes for table `tbl_kardex`
+--
+ALTER TABLE `tbl_kardex`
+  ADD PRIMARY KEY (`id_kardex`),
+  ADD KEY `id_producto` (`id_producto`),
+  ADD KEY `id_usuario_ing` (`id_usuario_ing`);
 
 --
 -- Indexes for table `tbl_marcas`
@@ -1269,7 +1313,7 @@ ALTER TABLE `tbl_usuarios`
 -- AUTO_INCREMENT for table `tbl_bitacora`
 --
 ALTER TABLE `tbl_bitacora`
-  MODIFY `id_bitacora` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
+  MODIFY `id_bitacora` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
 
 --
 -- AUTO_INCREMENT for table `tbl_categorias`
@@ -1305,7 +1349,7 @@ ALTER TABLE `tbl_det_compras`
 -- AUTO_INCREMENT for table `tbl_det_ordenes`
 --
 ALTER TABLE `tbl_det_ordenes`
-  MODIFY `id_det_orden` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_det_orden` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_direcciones`
@@ -1317,13 +1361,19 @@ ALTER TABLE `tbl_direcciones`
 -- AUTO_INCREMENT for table `tbl_error_log`
 --
 ALTER TABLE `tbl_error_log`
-  MODIFY `id_error_log` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id_error_log` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `tbl_inventario`
 --
 ALTER TABLE `tbl_inventario`
-  MODIFY `id_inventario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_inventario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tbl_kardex`
+--
+ALTER TABLE `tbl_kardex`
+  MODIFY `id_kardex` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_marcas`
@@ -1437,11 +1487,11 @@ ALTER TABLE `tbl_det_compras`
 -- Constraints for table `tbl_det_ordenes`
 --
 ALTER TABLE `tbl_det_ordenes`
-  ADD CONSTRAINT `tbl_det_ordenes_ibfk_1` FOREIGN KEY (`id_orden`) REFERENCES `tbl_ordenes` (`id_orden`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `tbl_det_ordenes_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `tbl_productos` (`id_producto`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `tbl_det_ordenes_ibfk_3` FOREIGN KEY (`id_inventario`) REFERENCES `tbl_inventario` (`id_inventario`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `tbl_det_ordenes_ibfk_4` FOREIGN KEY (`id_usuario_ing`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `tbl_det_ordenes_ibfk_5` FOREIGN KEY (`id_usuario_mod`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `tbl_det_ordenes_ibfk_5` FOREIGN KEY (`id_usuario_mod`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `tbl_det_ordenes_ibfk_6` FOREIGN KEY (`id_orden`) REFERENCES `tbl_ordenes` (`id_orden`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `tbl_det_ordenes_ibfk_7` FOREIGN KEY (`id_inventario`) REFERENCES `tbl_inventario` (`id_inventario`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `tbl_direcciones`
@@ -1464,8 +1514,14 @@ ALTER TABLE `tbl_error_log`
 --
 ALTER TABLE `tbl_inventario`
   ADD CONSTRAINT `tbl_inventario_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `tbl_productos` (`id_producto`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `tbl_inventario_ibfk_2` FOREIGN KEY (`id_usuario_ing`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `tbl_inventario_ibfk_3` FOREIGN KEY (`id_usuario_mod`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `tbl_inventario_ibfk_2` FOREIGN KEY (`id_usuario_ing`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Constraints for table `tbl_kardex`
+--
+ALTER TABLE `tbl_kardex`
+  ADD CONSTRAINT `tbl_kardex_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `tbl_productos` (`id_producto`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `tbl_kardex_ibfk_2` FOREIGN KEY (`id_usuario_ing`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `tbl_marcas`

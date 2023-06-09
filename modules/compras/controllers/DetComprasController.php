@@ -79,6 +79,12 @@ class DetComprasController extends Controller
     {
         $model = new DetCompras();
         $compra = Compras::find()->where(['id_compra' => $id_compra])->one();
+
+        if ($compra->estado == 1) {
+            Yii::$app->session->setFlash('danger', "La compra ya fue procesada, no puede agregarse al inventario. Comuniquese con su administrador");
+            return $this->redirect(['/compras/compras/view', 'id_compra' => $id_compra]);
+        }
+
         $grid = new ActiveDataProvider(['query' => DetCompras::find()->where(['id_compra' => $id_compra])]);
 
         $sub_total = 0;

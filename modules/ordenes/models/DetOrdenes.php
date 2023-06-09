@@ -3,7 +3,7 @@
 namespace app\modules\ordenes\models;
 
 use app\models\Usuarios;
-use app\modules\productos\models\Inventario;
+use app\modules\inventario\models\Inventario;
 use app\modules\productos\models\Productos;
 use Yii;
 use yii\behaviors\BlameableBehavior;

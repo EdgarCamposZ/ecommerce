@@ -94,6 +94,9 @@ $config = [
         'clientes' => [
             'class' => 'app\modules\clientes\Clientes',
         ],
+        'inventario' => [
+            'class' => 'app\modules\inventario\Inventario',
+        ],
         'ordenes' => [
             'class' => 'app\modules\ordenes\Ordenes',
         ],

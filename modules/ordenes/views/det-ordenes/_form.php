@@ -1,6 +1,6 @@
 <?php
 
-use app\modules\productos\models\Inventario;
+use app\modules\inventario\models\Inventario;
 use app\modules\productos\models\Productos;
 use kartik\editable\Editable;
 use kartik\grid\GridView;
@@ -125,7 +125,7 @@ use yii\helpers\Url;
                         <div class="col-md-4">
                             <?= Html::activeLabel($model, 'id_inventario', ['class' => 'control-label']) ?>
                             <?= $form->field($model, 'id_inventario', ['showLabels' => false])->widget(Select2::class, [
-                                'data' => ArrayHelper::map(Inventario::find()->all(), 'id_inventario', 'existencias'),
+                                'data' => ArrayHelper::map(Inventario::find()->all(), 'id_inventario', 'existencia'),
                                 'language' => 'es',
                                 'options' => ['placeholder' => '- Seleccionar Existencias -'],
                                 'pluginOptions' => ['allowClear' => true],

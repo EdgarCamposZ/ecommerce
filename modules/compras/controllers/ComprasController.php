@@ -7,6 +7,8 @@ use app\models\Bitacora;
 use app\modules\compras\models\Compras;
 use app\modules\compras\models\ComprasSearch;
 use app\modules\compras\models\DetCompras;
+use app\modules\inventario\models\Inventario;
+use app\modules\inventario\models\Kardex;
 use Exception;
 use yii\helpers\Json;
 use Yii;
@@ -144,7 +146,7 @@ class ComprasController extends Controller
             return $this->render('create', ['model' => $model,]);
         }
     }
-    
+
     //** Crear codigo para compra */
     function CreateCodigo()
     {
@@ -169,8 +171,7 @@ class ComprasController extends Controller
         } elseif ($id >= 1000 && $id < 10000) {
             $tmp .= "0";
             $tmp .= $id;
-        } 
-        else {
+        } else {
             $tmp .= $id;
         }
         $result = str_replace($id, $tmp, $numero);
@@ -188,6 +189,11 @@ class ComprasController extends Controller
     {
         $model = $this->findModel($id_compra);
 
+        if ($model->estado == 1) {
+            Yii::$app->session->setFlash('danger', "La compra ya fue procesada, no puede agregarse al inventario. Comuniquese con su administrador");
+            return $this->redirect(['view', 'id_compra' => $id_compra]);
+        }
+
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id_compra' => $model->id_compra]);
         }
@@ -197,9 +203,76 @@ class ComprasController extends Controller
         ]);
     }
 
-    public function actionInventario($id_compra) 
+    public function actionInventario($id_compra)
     {
-        
+        $model = $this->findModel($id_compra);
+
+        if ($model->estado == 1) {
+            Yii::$app->session->setFlash('danger', "La compra ya fue procesada, no puede agregarse al inventario. Comuniquese con su administrador");
+            return $this->redirect(['view', 'id_compra' => $id_compra]);
+        }
+
+        $detCompra = DetCompras::find()->where('id_compra = ' . $id_compra)->all();
+        $transaction = Yii::$app->db->beginTransaction();
+        try {
+            foreach ($detCompra as $det) {
+                $modelInventario = new Inventario();
+                $modelInventario->uuid = $det->uuid;
+                $modelInventario->id_producto = $det->id_producto;
+                $modelInventario->existencia = $det->cantidad;
+                $modelInventario->existencia_original = $det->cantidad;
+
+                if (!$modelInventario->save()) {
+                    throw new Exception(implode("<br />", \yii\helpers\ArrayHelper::getColumn($modelInventario->getErrors(), 0, false)));
+                }
+
+                $modelKardex = new Kardex();
+                $modelKardex->id_documento = $id_compra;
+                $modelKardex->cod_documento = $model->codigo;
+                $modelKardex->num_documento = $model->num_factura;
+                $modelKardex->tipo_documento = 'COMPRA';
+                $modelKardex->id_producto = $det->id_producto;
+                $modelKardex->cantidad = $det->cantidad;
+                $modelKardex->uuid = $det->uuid;
+                
+
+                if (!$modelKardex->save()) {
+                    throw new Exception(implode("<br />", \yii\helpers\ArrayHelper::getColumn($modelKardex->getErrors(), 0, false)));
+                }
+
+            }
+
+            $model->estado = 1;
+            $data_original = Json::encode($model->getOldAttributes(), JSON_PRETTY_PRINT);
+            $data_modificada = Json::encode($model->getDirtyAttributes(), JSON_PRETTY_PRINT);
+
+            if (!$model->save()) {
+                throw new Exception(implode("<br />", \yii\helpers\ArrayHelper::getColumn($model->getErrors(), 0, false)));
+            }
+
+            $bitacora = new Bitacora();
+            $bitacora->id_registro = $model->id_compra;
+            $bitacora->controlador = $controller = Yii::$app->controller->id;
+            $bitacora->accion = Yii::$app->controller->action->id;
+            $bitacora->data_original = $data_original;
+            $bitacora->data_modificada = $data_modificada;
+            $bitacora->id_usuario = Yii::$app->user->identity->id;
+            $bitacora->fecha = $model->fecha_mod;
+
+            if (!$bitacora->save()) {
+                throw new Exception(implode("<br />", \yii\helpers\ArrayHelper::getColumn($bitacora->getErrors(), 0, false)));
+            }
+
+            $transaction->commit();
+        } catch (Exception $e) {
+            $transaction->rollBack();
+            $controller = Yii::$app->controller->id . "/" . Yii::$app->controller->action->id;
+            CoreController::getErrorLog(\Yii::$app->user->identity->id, $e, $controller);
+            return $this->redirect(['view', 'id_compra' => $id_compra]);
+        }
+
+        Yii::$app->session->setFlash('success', "Inventario actualizado exitosamente.");
+        return $this->redirect(['view', 'id_compra' => $id_compra]);
     }
 
     /**
