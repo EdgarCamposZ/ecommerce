@@ -94,6 +94,9 @@ $config = [
         'clientes' => [
             'class' => 'app\modules\clientes\Clientes',
         ],
+        'ordenes' => [
+            'class' => 'app\modules\ordenes\Ordenes',
+        ],
     ],
     'params' => $params,
     'as access' => [

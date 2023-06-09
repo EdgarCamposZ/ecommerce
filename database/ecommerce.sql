@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 06, 2023 at 05:56 PM
+-- Generation Time: Jun 09, 2023 at 03:27 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -67,6 +67,7 @@ INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `cr
 ('/debug/*', 2, NULL, NULL, NULL, 1677807204, 1677807204),
 ('/gii/*', 2, NULL, NULL, NULL, 1677807211, 1677807211),
 ('/gridview/*', 2, NULL, NULL, NULL, 1677807174, 1677807174),
+('/ordenes/*', 2, NULL, NULL, NULL, 1686283926, 1686283926),
 ('/productos/*', 2, NULL, NULL, NULL, 1681438950, 1681438950),
 ('/rbac/*', 2, NULL, NULL, NULL, 1677807195, 1677807195),
 ('/site/*', 2, NULL, NULL, NULL, 1677807256, 1677807256),
@@ -98,6 +99,7 @@ INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
 ('PermisoAdmin', '/gii/*'),
 ('PermisoAdmin', '/gridview/*'),
 ('PermisoDemo', '/gridview/*'),
+('PermisoAdmin', '/ordenes/*'),
 ('PermisoAdmin', '/productos/*'),
 ('PermisoDemo', '/productos/*'),
 ('PermisoAdmin', '/rbac/*'),
@@ -273,7 +275,14 @@ INSERT INTO `tbl_bitacora` (`id_bitacora`, `id_registro`, `controlador`, `accion
 (130, 1, 'clientes', 'update', '\"{\\n    \\\"id_cliente\\\": 1,\\n    \\\"nombre\\\": \\\"Gissel\\\",\\n    \\\"apellido\\\": \\\"Zelaya\\\",\\n    \\\"telefono\\\": \\\"13269076\\\",\\n    \\\"email\\\": \\\"cliente1@cliente.com\\\",\\n    \\\"fecha_ing\\\": \\\"2023-05-31 14:07:40\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 23:03:01\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 0\\n}\"', '\"{\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-06-05 23:03:06'),
 (131, 10, 'direcciones', 'delete', '\"{\\n    \\\"id_direccion\\\": 10,\\n    \\\"id_cliente\\\": 1,\\n    \\\"contacto\\\": \\\"Fernando\\\",\\n    \\\"telefono\\\": \\\"55578886\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 5<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 12,\\n    \\\"id_municipio\\\": 199,\\n    \\\"principal\\\": 0,\\n    \\\"fecha_ing\\\": \\\"2023-06-05 20:03:15\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 23:02:45\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 0\\n}\"', '\"[]\"', 1, '2023-06-05 23:02:45'),
 (132, 10, 'direcciones', 'update', '\"{\\n    \\\"id_direccion\\\": 10,\\n    \\\"id_cliente\\\": 1,\\n    \\\"contacto\\\": \\\"Fernando\\\",\\n    \\\"telefono\\\": \\\"55578886\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 5<\\\\/p>\\\",\\n    \\\"id_departamento\\\": 12,\\n    \\\"id_municipio\\\": 199,\\n    \\\"principal\\\": 0,\\n    \\\"fecha_ing\\\": \\\"2023-06-05 20:03:15\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 23:02:45\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 0\\n}\"', '\"{\\n    \\\"id_departamento\\\": \\\"12\\\",\\n    \\\"id_municipio\\\": \\\"199\\\",\\n    \\\"principal\\\": \\\"0\\\",\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-06-05 23:23:34'),
-(133, 12, 'direcciones', 'create', '\"{\\n    \\\"id_direccion\\\": 12,\\n    \\\"id_cliente\\\": \\\"2\\\",\\n    \\\"contacto\\\": \\\"Fernando\\\",\\n    \\\"telefono\\\": \\\"22146477\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 2<\\\\/p>\\\",\\n    \\\"id_departamento\\\": \\\"12\\\",\\n    \\\"id_municipio\\\": \\\"211\\\",\\n    \\\"principal\\\": \\\"0\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-05 23:43:19\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 23:43:19\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', NULL, 1, '2023-06-05 23:43:19');
+(133, 12, 'direcciones', 'create', '\"{\\n    \\\"id_direccion\\\": 12,\\n    \\\"id_cliente\\\": \\\"2\\\",\\n    \\\"contacto\\\": \\\"Fernando\\\",\\n    \\\"telefono\\\": \\\"22146477\\\",\\n    \\\"direccion\\\": \\\"<p>Direccion 2<\\\\/p>\\\",\\n    \\\"id_departamento\\\": \\\"12\\\",\\n    \\\"id_municipio\\\": \\\"211\\\",\\n    \\\"principal\\\": \\\"0\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-05 23:43:19\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-05 23:43:19\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', NULL, 1, '2023-06-05 23:43:19'),
+(134, 6, 'marcas', 'update', '\"{\\n    \\\"id_marca\\\": 6,\\n    \\\"nombre\\\": \\\"SAMSUNG\\\",\\n    \\\"descripcion\\\": \\\"<p>\\\\\\\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\\\\r\\\\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \\\\r\\\\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \\\\r\\\\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \\\\r\\\\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \\\\r\\\\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \\\\r\\\\nmollit anim id est laborum.\\\\\\\"<\\\\/p>\\\",\\n    \\\"imagen\\\": \\\"\\\\/marcas\\\\/tIopubhx1sfXUSvQpTJc3y2f3-jt1-A6.png\\\",\\n    \\\"fecha_ing\\\": \\\"2023-04-14 19:59:09\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-04-25 16:46:08\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 1\\n}\"', '\"{\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', 1, '2023-06-06 12:11:12'),
+(135, 13, 'direcciones', 'create', '\"{\\n    \\\"id_direccion\\\": 13,\\n    \\\"id_cliente\\\": \\\"1\\\",\\n    \\\"contacto\\\": \\\"Edgar\\\",\\n    \\\"telefono\\\": \\\"22146477\\\",\\n    \\\"direccion\\\": \\\"<p>yeyeye<\\\\/p>\\\",\\n    \\\"id_departamento\\\": \\\"1\\\",\\n    \\\"id_municipio\\\": \\\"1\\\",\\n    \\\"principal\\\": \\\"0\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-08 21:36:34\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-08 21:36:34\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": \\\"1\\\"\\n}\"', NULL, 1, '2023-06-08 21:36:34'),
+(136, 1, 'inventario', 'create', '\"{\\n    \\\"id_inventario\\\": 1,\\n    \\\"id_producto\\\": \\\"8\\\",\\n    \\\"existencias\\\": \\\"10\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-08 22:46:24\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-08 22:46:24\\\",\\n    \\\"id_usuario_mod\\\": 1\\n}\"', NULL, 1, '2023-06-08 22:46:24'),
+(137, 2, 'inventario', 'create', '\"{\\n    \\\"id_inventario\\\": 2,\\n    \\\"id_producto\\\": \\\"8\\\",\\n    \\\"existencias\\\": \\\"10\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-08 23:26:29\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-08 23:26:29\\\",\\n    \\\"id_usuario_mod\\\": 1\\n}\"', NULL, 1, '2023-06-08 23:26:29'),
+(138, 1, 'ordenes', 'create', '\"{\\n    \\\"id_orden\\\": 1,\\n    \\\"id_cliente\\\": \\\"2\\\",\\n    \\\"id_direccion\\\": \\\"7\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-08 23:48:18\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-08 23:48:18\\\",\\n    \\\"id_usuario_mod\\\": 1,\\n    \\\"estado\\\": 0\\n}\"', NULL, 1, '2023-06-08 23:48:18'),
+(139, 1, 'det-ordenes', 'create', '\"{\\n    \\\"id_det_orden\\\": 1,\\n    \\\"id_orden\\\": \\\"1\\\",\\n    \\\"id_producto\\\": \\\"8\\\",\\n    \\\"id_inventario\\\": \\\"2\\\",\\n    \\\"cantidad\\\": \\\"1\\\",\\n    \\\"descuento\\\": \\\"0.00\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-09 09:04:48\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-09 09:04:48\\\",\\n    \\\"id_usuario_mod\\\": 1\\n}\"', NULL, 1, '2023-06-09 09:04:48'),
+(140, 2, 'det-ordenes', 'create', '\"{\\n    \\\"id_det_orden\\\": 2,\\n    \\\"id_orden\\\": \\\"1\\\",\\n    \\\"id_producto\\\": \\\"8\\\",\\n    \\\"id_inventario\\\": \\\"2\\\",\\n    \\\"cantidad\\\": \\\"1\\\",\\n    \\\"descuento\\\": \\\"0.00\\\",\\n    \\\"fecha_ing\\\": \\\"2023-06-09 09:11:25\\\",\\n    \\\"id_usuario_ing\\\": 1,\\n    \\\"fecha_mod\\\": \\\"2023-06-09 09:11:25\\\",\\n    \\\"id_usuario_mod\\\": 1\\n}\"', NULL, 1, '2023-06-09 09:11:25');
 
 -- --------------------------------------------------------
 
@@ -422,6 +431,32 @@ INSERT INTO `tbl_det_compras` (`id_det_compra`, `id_compra`, `id_producto`, `can
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_det_ordenes`
+--
+
+CREATE TABLE `tbl_det_ordenes` (
+  `id_det_orden` int NOT NULL,
+  `id_orden` int NOT NULL,
+  `id_producto` int NOT NULL,
+  `id_inventario` int NOT NULL,
+  `cantidad` int NOT NULL,
+  `descuento` decimal(10,2) NOT NULL,
+  `fecha_ing` datetime DEFAULT NULL,
+  `id_usuario_ing` int DEFAULT NULL,
+  `fecha_mod` datetime DEFAULT NULL,
+  `id_usuario_mod` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Dumping data for table `tbl_det_ordenes`
+--
+
+INSERT INTO `tbl_det_ordenes` (`id_det_orden`, `id_orden`, `id_producto`, `id_inventario`, `cantidad`, `descuento`, `fecha_ing`, `id_usuario_ing`, `fecha_mod`, `id_usuario_mod`) VALUES
+(2, 1, 8, 2, 1, '0.00', '2023-06-09 09:11:25', 1, '2023-06-09 09:11:25', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_direcciones`
 --
 
@@ -452,7 +487,8 @@ INSERT INTO `tbl_direcciones` (`id_direccion`, `id_cliente`, `contacto`, `telefo
 (8, 1, 'Moises', '214565333', '<p>Direccion 3</p>', 12, 199, 0, '2023-06-05 20:02:04', 1, '2023-06-05 20:02:04', 1, 1),
 (9, 1, 'Cesar', '13568900', '<p>Direccion 4</p>', 12, 199, 0, '2023-06-05 20:02:43', 1, '2023-06-05 20:02:43', 1, 1),
 (10, 1, 'Fernando', '55578886', '<p>Direccion 5</p>', 12, 199, 0, '2023-06-05 20:03:15', 1, '2023-06-05 23:23:34', 1, 1),
-(12, 2, 'Fernando', '22146477', '<p>Direccion 2</p>', 12, 211, 0, '2023-06-05 23:43:19', 1, '2023-06-05 23:43:19', 1, 1);
+(12, 2, 'Fernando', '22146477', '<p>Direccion 2</p>', 12, 211, 0, '2023-06-05 23:43:19', 1, '2023-06-05 23:43:19', 1, 1),
+(13, 1, 'Edgar', '22146477', '<p>yeyeye</p>', 1, 1, 0, '2023-06-08 21:36:34', 1, '2023-06-08 21:36:34', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -518,7 +554,36 @@ INSERT INTO `tbl_error_log` (`id_error_log`, `controller`, `mensaje`, `us_id`, `
 (42, 'direcciones/update', 'Exception: Ya existe otra dirección principal para este cliente. in C:\\laragon\\www\\ecommerce\\modules\\clientes\\controllers\\DireccionesController.php:137<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\clientes\\controllers\\DireccionesController-&gt;actionUpdate(&#039;10&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;update&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;clientes/direcc...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-05 23:23:16'),
 (43, 'direcciones/create', 'Exception: Ya existe otra dirección principal para este cliente. in C:\\laragon\\www\\ecommerce\\modules\\clientes\\controllers\\DireccionesController.php:85<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\clientes\\controllers\\DireccionesController-&gt;actionCreate(&#039;1&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;clientes/direcc...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-05 23:24:12'),
 (44, 'direcciones/create', 'Exception: Ya existe otra dirección principal para este cliente. in C:\\laragon\\www\\ecommerce\\modules\\clientes\\controllers\\DireccionesController.php:85<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\clientes\\controllers\\DireccionesController-&gt;actionCreate(&#039;1&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;clientes/direcc...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-05 23:24:54'),
-(45, 'direcciones/update', 'Exception: Ya existe otra dirección principal para este cliente. in C:\\laragon\\www\\ecommerce\\modules\\clientes\\controllers\\DireccionesController.php:142<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\clientes\\controllers\\DireccionesController-&gt;actionUpdate(&#039;12&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;update&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;clientes/direcc...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-05 23:43:46');
+(45, 'direcciones/update', 'Exception: Ya existe otra dirección principal para este cliente. in C:\\laragon\\www\\ecommerce\\modules\\clientes\\controllers\\DireccionesController.php:142<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\clientes\\controllers\\DireccionesController-&gt;actionUpdate(&#039;12&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;update&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;clientes/direcc...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-05 23:43:46'),
+(46, 'direcciones/create', 'Exception: Ya existe otra dirección principal para este cliente. in C:\\laragon\\www\\ecommerce\\modules\\clientes\\controllers\\DireccionesController.php:85<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\clientes\\controllers\\DireccionesController-&gt;actionCreate(&#039;1&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;clientes/direcc...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-08 21:36:23'),
+(47, 'inventario/create', 'Exception: Id Inventario cannot be blank. in C:\\laragon\\www\\ecommerce\\modules\\productos\\controllers\\InventarioController.php:81<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\productos\\controllers\\InventarioController-&gt;actionCreate()<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;productos/inven...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-08 22:23:45'),
+(48, 'inventario/create', 'Exception: Id Inventario cannot be blank. in C:\\laragon\\www\\ecommerce\\modules\\productos\\controllers\\InventarioController.php:81<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\productos\\controllers\\InventarioController-&gt;actionCreate()<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;productos/inven...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-08 22:32:56'),
+(49, 'inventario/create', 'Exception: Id Inventario cannot be blank. in C:\\laragon\\www\\ecommerce\\modules\\productos\\controllers\\InventarioController.php:81<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\productos\\controllers\\InventarioController-&gt;actionCreate()<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;productos/inven...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-08 22:34:48'),
+(50, 'det-ordenes/create', 'Exception: Id Producto is invalid. in C:\\laragon\\www\\ecommerce\\modules\\ordenes\\controllers\\DetOrdenesController.php:112<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\ordenes\\controllers\\DetOrdenesController-&gt;actionCreate(&#039;1&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;ordenes/det-ord...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-09 09:02:15'),
+(51, 'det-ordenes/create', 'Exception: Id Producto is invalid. in C:\\laragon\\www\\ecommerce\\modules\\ordenes\\controllers\\DetOrdenesController.php:112<br />\nStack trace:<br />\n#0 [internal function]: app\\modules\\ordenes\\controllers\\DetOrdenesController-&gt;actionCreate(&#039;1&#039;)<br />\n#1 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\InlineAction.php(57): call_user_func_array(Array, Array)<br />\n#2 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Controller.php(178): yii\\base\\InlineAction-&gt;runWithParams(Array)<br />\n#3 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Module.php(552): yii\\base\\Controller-&gt;runAction(&#039;create&#039;, Array)<br />\n#4 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\web\\Application.php(103): yii\\base\\Module-&gt;runAction(&#039;ordenes/det-ord...&#039;, Array)<br />\n#5 C:\\laragon\\www\\ecommerce\\vendor\\yiisoft\\yii2\\base\\Application.php(384): yii\\web\\Application-&gt;handleRequest(Object(yii\\web\\Request))<br />\n#6 C:\\laragon\\www\\ecommerce\\web\\index.php(12): yii\\base\\Application-&gt;run()<br />\n#7 {main}', 1, '2023-06-09 09:03:18');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_inventario`
+--
+
+CREATE TABLE `tbl_inventario` (
+  `id_inventario` int NOT NULL,
+  `id_producto` int NOT NULL,
+  `existencias` int NOT NULL,
+  `fecha_ing` datetime DEFAULT NULL,
+  `id_usuario_ing` int DEFAULT NULL,
+  `fecha_mod` datetime DEFAULT NULL,
+  `id_usuario_mod` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish_ci;
+
+--
+-- Dumping data for table `tbl_inventario`
+--
+
+INSERT INTO `tbl_inventario` (`id_inventario`, `id_producto`, `existencias`, `fecha_ing`, `id_usuario_ing`, `fecha_mod`, `id_usuario_mod`) VALUES
+(2, 8, 10, '2023-06-08 23:26:29', 1, '2023-06-08 23:26:29', 1);
 
 -- --------------------------------------------------------
 
@@ -548,7 +613,7 @@ INSERT INTO `tbl_marcas` (`id_marca`, `nombre`, `descripcion`, `imagen`, `fecha_
 (3, 'Microsoft', '<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborum.\"</p>', '/marcas/RtTVcGEQESahmPVskRJoMde8xT6cPqi2.png', '2023-04-12 19:57:55', 1, '2023-04-25 11:07:26', 1, 1),
 (4, 'LG', '<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborum.\"</p>', '/marcas/bxU3qlCAfk9NMdpTPrDt-2g5VOGKUm-G.png', '2023-04-13 19:58:18', 1, '2023-04-25 11:07:36', 1, 1),
 (5, 'Apple', '<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborum.\"</p>', '/marcas/Cz42roXvcxPObSwO9hftdLw64uuWOI9o.png', '2023-04-14 19:58:43', 1, '2023-04-25 11:07:48', 1, 1),
-(6, 'SAMSUNG', '<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborum.\"</p>', '/marcas/tIopubhx1sfXUSvQpTJc3y2f3-jt1-A6.png', '2023-04-14 19:59:09', 1, '2023-04-25 16:46:08', 1, 1);
+(6, 'SAMSUNG', '<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\r\n tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \r\nveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \r\ncommodo consequat. Duis aute irure dolor in reprehenderit in voluptate \r\nvelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint \r\noccaecat cupidatat non proident, sunt in culpa qui officia deserunt \r\nmollit anim id est laborum.\"</p>', '/marcas/tIopubhx1sfXUSvQpTJc3y2f3-jt1-A6.png', '2023-04-14 19:59:09', 1, '2023-06-06 12:11:12', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -834,6 +899,30 @@ INSERT INTO `tbl_municipios` (`id_municipio`, `id_departamento`, `nombre`, `codi
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_ordenes`
+--
+
+CREATE TABLE `tbl_ordenes` (
+  `id_orden` int NOT NULL,
+  `id_cliente` int NOT NULL,
+  `id_direccion` int NOT NULL,
+  `fecha_ing` datetime DEFAULT NULL,
+  `id_usuario_ing` int DEFAULT NULL,
+  `fecha_mod` datetime DEFAULT NULL,
+  `id_usuario_mod` int DEFAULT NULL,
+  `estado` tinyint NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Dumping data for table `tbl_ordenes`
+--
+
+INSERT INTO `tbl_ordenes` (`id_orden`, `id_cliente`, `id_direccion`, `fecha_ing`, `id_usuario_ing`, `fecha_mod`, `id_usuario_mod`, `estado`) VALUES
+(1, 2, 7, '2023-06-08 23:48:18', 1, '2023-06-08 23:48:18', 1, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_productos`
 --
 
@@ -1063,6 +1152,17 @@ ALTER TABLE `tbl_det_compras`
   ADD KEY `id_usuario_mod` (`id_usuario_mod`);
 
 --
+-- Indexes for table `tbl_det_ordenes`
+--
+ALTER TABLE `tbl_det_ordenes`
+  ADD PRIMARY KEY (`id_det_orden`),
+  ADD KEY `id_orden` (`id_orden`),
+  ADD KEY `id_producto` (`id_producto`),
+  ADD KEY `id_inventario` (`id_inventario`),
+  ADD KEY `id_usuario_ing` (`id_usuario_ing`),
+  ADD KEY `id_usuario_mod` (`id_usuario_mod`);
+
+--
 -- Indexes for table `tbl_direcciones`
 --
 ALTER TABLE `tbl_direcciones`
@@ -1081,6 +1181,15 @@ ALTER TABLE `tbl_error_log`
   ADD KEY `us_id` (`us_id`);
 
 --
+-- Indexes for table `tbl_inventario`
+--
+ALTER TABLE `tbl_inventario`
+  ADD PRIMARY KEY (`id_inventario`),
+  ADD KEY `fk_producto` (`id_producto`),
+  ADD KEY `id_usuario_ing` (`id_usuario_ing`),
+  ADD KEY `id_usuario_mod` (`id_usuario_mod`);
+
+--
 -- Indexes for table `tbl_marcas`
 --
 ALTER TABLE `tbl_marcas`
@@ -1096,6 +1205,16 @@ ALTER TABLE `tbl_municipios`
   ADD KEY `ad_mu_relacion` (`id_departamento`),
   ADD KEY `ad_mu_relacion_2` (`id_departamento`),
   ADD KEY `ad_mu_relacion_3` (`id_departamento`);
+
+--
+-- Indexes for table `tbl_ordenes`
+--
+ALTER TABLE `tbl_ordenes`
+  ADD PRIMARY KEY (`id_orden`),
+  ADD KEY `id_cliente` (`id_cliente`),
+  ADD KEY `id_direccion` (`id_direccion`),
+  ADD KEY `id_usuario_ing` (`id_usuario_ing`),
+  ADD KEY `id_usuario_mod` (`id_usuario_mod`);
 
 --
 -- Indexes for table `tbl_productos`
@@ -1150,7 +1269,7 @@ ALTER TABLE `tbl_usuarios`
 -- AUTO_INCREMENT for table `tbl_bitacora`
 --
 ALTER TABLE `tbl_bitacora`
-  MODIFY `id_bitacora` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+  MODIFY `id_bitacora` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
 
 --
 -- AUTO_INCREMENT for table `tbl_categorias`
@@ -1183,16 +1302,28 @@ ALTER TABLE `tbl_det_compras`
   MODIFY `id_det_compra` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `tbl_det_ordenes`
+--
+ALTER TABLE `tbl_det_ordenes`
+  MODIFY `id_det_orden` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `tbl_direcciones`
 --
 ALTER TABLE `tbl_direcciones`
-  MODIFY `id_direccion` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_direccion` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tbl_error_log`
 --
 ALTER TABLE `tbl_error_log`
-  MODIFY `id_error_log` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id_error_log` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+
+--
+-- AUTO_INCREMENT for table `tbl_inventario`
+--
+ALTER TABLE `tbl_inventario`
+  MODIFY `id_inventario` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_marcas`
@@ -1205,6 +1336,12 @@ ALTER TABLE `tbl_marcas`
 --
 ALTER TABLE `tbl_municipios`
   MODIFY `id_municipio` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=263;
+
+--
+-- AUTO_INCREMENT for table `tbl_ordenes`
+--
+ALTER TABLE `tbl_ordenes`
+  MODIFY `id_orden` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_productos`
@@ -1297,6 +1434,16 @@ ALTER TABLE `tbl_det_compras`
   ADD CONSTRAINT `tbl_det_compras_ibfk_4` FOREIGN KEY (`id_usuario_mod`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
+-- Constraints for table `tbl_det_ordenes`
+--
+ALTER TABLE `tbl_det_ordenes`
+  ADD CONSTRAINT `tbl_det_ordenes_ibfk_1` FOREIGN KEY (`id_orden`) REFERENCES `tbl_ordenes` (`id_orden`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `tbl_det_ordenes_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `tbl_productos` (`id_producto`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `tbl_det_ordenes_ibfk_3` FOREIGN KEY (`id_inventario`) REFERENCES `tbl_inventario` (`id_inventario`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `tbl_det_ordenes_ibfk_4` FOREIGN KEY (`id_usuario_ing`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `tbl_det_ordenes_ibfk_5` FOREIGN KEY (`id_usuario_mod`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
 -- Constraints for table `tbl_direcciones`
 --
 ALTER TABLE `tbl_direcciones`
@@ -1313,6 +1460,14 @@ ALTER TABLE `tbl_error_log`
   ADD CONSTRAINT `tbl_error_log_ibfk_1` FOREIGN KEY (`us_id`) REFERENCES `tbl_usuarios` (`id_usuario`);
 
 --
+-- Constraints for table `tbl_inventario`
+--
+ALTER TABLE `tbl_inventario`
+  ADD CONSTRAINT `tbl_inventario_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `tbl_productos` (`id_producto`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `tbl_inventario_ibfk_2` FOREIGN KEY (`id_usuario_ing`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `tbl_inventario_ibfk_3` FOREIGN KEY (`id_usuario_mod`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
 -- Constraints for table `tbl_marcas`
 --
 ALTER TABLE `tbl_marcas`
@@ -1324,6 +1479,15 @@ ALTER TABLE `tbl_marcas`
 --
 ALTER TABLE `tbl_municipios`
   ADD CONSTRAINT `tbl_municipios_ibfk_1` FOREIGN KEY (`id_departamento`) REFERENCES `tbl_departamentos` (`id_departamento`);
+
+--
+-- Constraints for table `tbl_ordenes`
+--
+ALTER TABLE `tbl_ordenes`
+  ADD CONSTRAINT `tbl_ordenes_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `tbl_clientes` (`id_cliente`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `tbl_ordenes_ibfk_2` FOREIGN KEY (`id_direccion`) REFERENCES `tbl_direcciones` (`id_direccion`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `tbl_ordenes_ibfk_3` FOREIGN KEY (`id_usuario_ing`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `tbl_ordenes_ibfk_4` FOREIGN KEY (`id_usuario_mod`) REFERENCES `tbl_usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `tbl_productos`

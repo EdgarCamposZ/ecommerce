@@ -101,6 +101,18 @@ use yii\helpers\Url;
                                 <p>Productos</p>
                             </a></li>
                         <!-------------------------------------------------->
+                        <?php if (Yii::$app->controller->id == 'inventario' && in_array(\Yii::$app->controller->action->id, ['index', 'create', 'update', 'view'])) {
+                            $li = "nav-item active";
+                            $a = "nav-link active";
+                        } else {
+                            $li = "nav-item";
+                            $a = "nav-link";
+                        }
+                        ?>
+                        <li class="<?= $li; ?>"><a class="<?= $a; ?>" href="<?php echo Url::toRoute(['/productos/inventario/index']); ?>"><i class="nav-icon far fa-circle text-yellow"></i>
+                                <p>Inventario</p>
+                            </a></li>
+                        <!-------------------------------------------------->
                     </ul>
                 </li>
                 <!------- FIN MENU PRODUCTOS ------->
@@ -178,6 +190,36 @@ use yii\helpers\Url;
                     </ul>
                 </li>
                 <!------- FIN MENU CLIENTES ------->
+                <!------- MENU ORDENES ------->
+                <?php if (
+                    Yii::$app->controller->id == 'ordenes'
+                ) {
+                    $li = "nav-item has-treeview active menu-open";
+                    $a = "nav-link active";
+                } else {
+                    $li = "nav-item has-treeview";
+                    $a = "nav-link";
+                } ?>
+                <li class="<?= $li; ?>"><a class="<?= $a; ?>" href="#"><i class="nav-icon fas fa-id-card"></i>
+                        <p>Ordenes <i class="right fas fa-angle-left"></i> </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <!-------------------------------------------------->
+                        <?php if (Yii::$app->controller->id == 'ordenes' && in_array(\Yii::$app->controller->action->id, ['index', 'create', 'update', 'view'])) {
+                            $li = "nav-item active";
+                            $a = "nav-link active";
+                        } else {
+                            $li = "nav-item";
+                            $a = "nav-link";
+                        }
+                        ?>
+                        <li class="<?= $li; ?>"><a class="<?= $a; ?>" href="<?php echo Url::toRoute(['/ordenes/ordenes/index']); ?>"><i class="nav-icon far fa-circle text-blue"></i>
+                                <p>Ordenes</p>
+                            </a></li>
+                        <!-------------------------------------------------->
+                    </ul>
+                </li>
+                <!------- FIN MENU ORDENES ------->
 
                 <!------- MENU USUARIOS ------->
                 <?php if (Yii::$app->controller->id == 'usuarios' || Yii::$app->controller->id == 'route' || Yii::$app->controller->id == 'permission' || Yii::$app->controller->id == 'role' || Yii::$app->controller->id == 'assignment') {

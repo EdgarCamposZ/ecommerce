@@ -1,25 +1,22 @@
 <?php
 
-namespace app\modules\compras\controllers;
+namespace app\modules\ordenes\controllers;
 
 use app\controllers\CoreController;
 use app\models\Bitacora;
-use app\modules\compras\models\Compras;
-use app\modules\compras\models\ComprasSearch;
-use app\modules\compras\models\DetCompras;
+use app\modules\ordenes\models\Ordenes;
+use app\modules\ordenes\models\OrdenesSearch;
 use Exception;
-use yii\helpers\Json;
 use Yii;
-use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\helpers\Json as HelpersJson;
+use yii\helpers\Json;
 
 /**
- * ComprasController implements the CRUD actions for Compras model.
+ * OrdenesController implements the CRUD actions for Ordenes model.
  */
-class ComprasController extends Controller
+class OrdenesController extends Controller
 {
     /**
      * @inheritDoc
@@ -40,13 +37,13 @@ class ComprasController extends Controller
     }
 
     /**
-     * Lists all Compras models.
+     * Lists all Ordenes models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new ComprasSearch();
+        $searchModel = new OrdenesSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -56,59 +53,30 @@ class ComprasController extends Controller
     }
 
     /**
-     * Displays a single Compras model.
-     * @param int $id_compra Id Compra
+     * Displays a single Ordenes model.
+     * @param int $id_orden Id Orden
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id_compra)
+    public function actionView($id_orden)
     {
-        $model = $this->findModel($id_compra);
-        $compra = Compras::find()->where(['id_compra' => $id_compra])->one();
-        $grid = new ActiveDataProvider(['query' => DetCompras::find()->where(['id_compra' => $id_compra])]);
-
-        $sub_total = 0;
-        $iva = 0;
-        $retencion = 0;
-        $total = 0;
-
-        $detCompras = DetCompras::find()->where(['id_compra' => $id_compra])->all();
-
-        foreach ($detCompras as $detCompra) {
-            $sub_total += ($detCompra->costo * $detCompra->cantidad) - ($detCompra->costo * $detCompra->cantidad) * ($detCompra->descuento / 100);
-            $iva += (($detCompra->costo * $detCompra->cantidad) - ($detCompra->costo * $detCompra->cantidad) * ($detCompra->descuento / 100)) * (0.13);
-            $total += (($detCompra->costo * $detCompra->cantidad) - ($detCompra->costo * $detCompra->cantidad) * ($detCompra->descuento / 100)) * (1.13);
-        }
-
-        if ($sub_total >= 100) {
-            $retencion = $sub_total * 0.01;
-        }
-
         return $this->render('view', [
-            'model' => $model,
-            'compra' => $compra,
-            'grid' => $grid,
-            'sub_total' => $sub_total,
-            'iva' => $iva,
-            'retencion' => $retencion,
-            'total' => $total,
+            'model' => $this->findModel($id_orden),
         ]);
     }
 
     /**
-     * Creates a new Compras model.
+     * Creates a new Ordenes model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new Compras();
+        $model = new Ordenes();
 
         if ($model->load($this->request->post())) {
             $transaction = Yii::$app->db->beginTransaction();
             try {
-                $model->codigo = $this->CreateCodigo();
-                $model->anulado = 0;
                 $model->estado = 0;
 
                 if (!$model->save()) {
@@ -118,7 +86,7 @@ class ComprasController extends Controller
                 $data_original = Json::encode($model->getAttributes(), JSON_PRETTY_PRINT);
 
                 $bitacora = new Bitacora();
-                $bitacora->id_registro = $model->id_compra;
+                $bitacora->id_registro = $model->id_orden;
                 $bitacora->controlador = $controller = Yii::$app->controller->id;
                 $bitacora->accion = Yii::$app->controller->action->id;
                 $bitacora->data_original = $data_original;
@@ -139,57 +107,25 @@ class ComprasController extends Controller
             }
 
             Yii::$app->session->setFlash('success', "Registro creado exitosamente.");
-            return $this->redirect(['det-compras/create', 'id_compra' => $model->id_compra]);
+            return $this->redirect(['det-ordenes/create', 'id_orden' => $model->id_orden]);
         } else {
             return $this->render('create', ['model' => $model,]);
         }
     }
-    
-    //** Crear codigo para compra */
-    function CreateCodigo()
-    {
-        $compra = Compras::find()->orderBy(['id_compra' => SORT_DESC])->one();
-        if (empty($compra->codigo)) $codigo = 0;
-        else $codigo = $compra->codigo;
-
-        $int = intval(preg_replace('/[^0-9]+/', '', $codigo), 10);
-        $id = $int + 1;
-
-        $numero = $id;
-        $tmp = "";
-        if ($id < 10) {
-            $tmp .= '0000';
-            $tmp .= $id;
-        } elseif ($id >= 10 && $id < 100) {
-            $tmp .= "000";
-            $tmp .= $id;
-        } elseif ($id >= 100 && $id < 1000) {
-            $tmp .= "00";
-            $tmp .= $id;
-        } elseif ($id >= 1000 && $id < 10000) {
-            $tmp .= "0";
-            $tmp .= $id;
-        } 
-        else {
-            $tmp .= $id;
-        }
-        $result = str_replace($id, $tmp, $numero);
-        return "CMPR-" . $result;
-    }
 
     /**
-     * Updates an existing Compras model.
+     * Updates an existing Ordenes model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $id_compra Id Compra
+     * @param int $id_orden Id Orden
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id_compra)
+    public function actionUpdate($id_orden)
     {
-        $model = $this->findModel($id_compra);
+        $model = $this->findModel($id_orden);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id_compra' => $model->id_compra]);
+            return $this->redirect(['view', 'id_orden' => $model->id_orden]);
         }
 
         return $this->render('update', [
@@ -197,35 +133,30 @@ class ComprasController extends Controller
         ]);
     }
 
-    public function actionInventario($id_compra) 
-    {
-        
-    }
-
     /**
-     * Deletes an existing Compras model.
+     * Deletes an existing Ordenes model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $id_compra Id Compra
+     * @param int $id_orden Id Orden
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id_compra)
+    public function actionDelete($id_orden)
     {
-        $this->findModel($id_compra)->delete();
+        $this->findModel($id_orden)->delete();
 
         return $this->redirect(['index']);
     }
 
     /**
-     * Finds the Compras model based on its primary key value.
+     * Finds the Ordenes model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $id_compra Id Compra
-     * @return Compras the loaded model
+     * @param int $id_orden Id Orden
+     * @return Ordenes the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id_compra)
+    protected function findModel($id_orden)
     {
-        if (($model = Compras::findOne(['id_compra' => $id_compra])) !== null) {
+        if (($model = Ordenes::findOne(['id_orden' => $id_orden])) !== null) {
             return $model;
         }
 
