@@ -9,6 +9,7 @@ use app\modules\ordenes\models\DetOrdenesSearch;
 use app\modules\ordenes\models\Ordenes;
 use app\modules\productos\models\Productos;
 use Exception;
+use kartik\grid\EditableColumnAction;
 use Yii;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
@@ -81,20 +82,13 @@ class DetOrdenesController extends Controller
         $grid = new ActiveDataProvider(['query' => DetOrdenes::find()->where(['id_orden' => $id_orden])]);
 
         $sub_total = 0;
-        $iva = 0;
-        $retencion = 0;
         $total = 0;
 
         $detOrdenes = DetOrdenes::find()->where(['id_orden' => $id_orden])->all();
 
         foreach ($detOrdenes as $detOrden) {
            $sub_total += ($detOrden->producto->precio * $detOrden->cantidad) - ($detOrden->producto->precio * $detOrden->cantidad) * ($detOrden->descuento / 100);
-           $iva += (($detOrden->producto->precio * $detOrden->cantidad) - ($detOrden->producto->precio * $detOrden->cantidad) * ($detOrden->descuento / 100)) * (0.13);
            $total += (($detOrden->producto->precio * $detOrden->cantidad) - ($detOrden->producto->precio * $detOrden->cantidad) * ($detOrden->descuento / 100)) * (1.13);
-        }
-
-        if ($sub_total >= 100) {
-            $retencion = $sub_total * 0.01;
         }
 
         if ($model->load($this->request->post())) {
@@ -144,8 +138,6 @@ class DetOrdenesController extends Controller
                 'orden' => $orden,
                 'grid' => $grid,
                 'sub_total' => $sub_total,
-                'iva' => $iva,
-                'retencion' => $retencion,
                 'total' => $total,
             ]);
         } 
@@ -192,11 +184,11 @@ class DetOrdenesController extends Controller
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id_det_orden)
+    public function actionDelete($id_det_orden, $id_orden)
     {
         $this->findModel($id_det_orden)->delete();
-
-        return $this->redirect(['index']);
+        Yii::$app->session->setFlash('danger', "Registro eliminado exitosamente.");
+        return $this->redirect(['create', 'id_orden' => $id_orden]);
     }
 
     /**

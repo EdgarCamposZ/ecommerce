@@ -4,10 +4,12 @@ namespace app\modules\ordenes\controllers;
 
 use app\controllers\CoreController;
 use app\models\Bitacora;
+use app\modules\ordenes\models\DetOrdenes;
 use app\modules\ordenes\models\Ordenes;
 use app\modules\ordenes\models\OrdenesSearch;
 use Exception;
 use Yii;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -60,8 +62,26 @@ class OrdenesController extends Controller
      */
     public function actionView($id_orden)
     {
+        $model = $this->findModel($id_orden);
+        $orden = Ordenes::find()->where(['id_orden' => $id_orden])->one();
+        $grid = new ActiveDataProvider(['query' => DetOrdenes::find()->where(['id_orden' => $id_orden])]);
+
+        $sub_total = 0;
+        $total = 0;
+
+        $detOrdenes = DetOrdenes::find()->where(['id_orden' => $id_orden])->all();
+
+        foreach ($detOrdenes as $detOrden) {
+            $sub_total += ($detOrden->producto->precio * $detOrden->cantidad) - ($detOrden->producto->precio * $detOrden->cantidad) * ($detOrden->descuento / 100);
+            $total += (($detOrden->producto->precio * $detOrden->cantidad) - ($detOrden->producto->precio * $detOrden->cantidad) * ($detOrden->descuento / 100)) * (1.13);
+        }
+
         return $this->render('view', [
-            'model' => $this->findModel($id_orden),
+            'model' => $model,
+            'orden' => $orden,
+            'grid' => $grid,
+            'sub_total' => $sub_total,
+            'total' => $total,
         ]);
     }
 

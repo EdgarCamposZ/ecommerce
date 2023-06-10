@@ -60,28 +60,6 @@ use yii\helpers\Url;
                     </tr>
                     <tr>
                         <td>
-                            <h4>IVA:</h4>
-                        </td>
-                        <td>
-                            <h4>$</h4>
-                        </td>
-                        <td>
-                            <h4><?php echo number_format($iva, 2) ?></h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h4>Retencion:</h4>
-                        </td>
-                        <td>
-                            <h4>$</h4>
-                        </td>
-                        <td>
-                            <h4><?php echo number_format($retencion, 2) ?></h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
                             <h4>Total:</h4>
                         </td>
                         <td>
@@ -141,13 +119,13 @@ use yii\helpers\Url;
                                 'append' => ['content' => '<span>%</span>'],
                             ]])->textInput(['value' => '0.00', 'type' => 'number', 'step' => '0.01']); ?>
                         </div>
-                        <div class="card-footer">
-                            <?= Html::submitButton(
-                                $model->isNewRecord ? '<i class="fa fa-save"></i> Guardar' : '<i class="fa fa-save"></i> Actualizar',
-                                ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary', 'name' => 'submit-button']
-                            ) ?>
-                            <?= Html::a('<i class="fa fa-ban"></i> Cancelar', ['index'], ['class' => 'btn btn-danger']) ?>
-                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <?= Html::submitButton(
+                            $model->isNewRecord ? '<i class="fa fa-save"></i> Guardar' : '<i class="fa fa-save"></i> Actualizar',
+                            ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary', 'name' => 'submit-button']
+                        ) ?>
+                        <?= Html::a('<i class="fa fa-ban"></i> Cancelar', ['/ordenes/ordenes/view', 'id_orden' => $orden->id_orden], ['class' => 'btn btn-danger']) ?>
                     </div>
                 </form>
                 <?php ActiveForm::end(); ?>
@@ -158,7 +136,7 @@ use yii\helpers\Url;
 
 <div class="row">
     <div class="col-md-12">
-        <div class="det-compras-index">
+        <div class="det-ordenes-index">
             <?php
             $gridColums = [
                 [
@@ -184,7 +162,7 @@ use yii\helpers\Url;
                     'attribute' => 'cantidad',
                     'editableOptions' => [
                         'asPopover' => false,
-                        'formOptions' => ['action' => ['/compras/det-compras/editarcantidad']],
+                        'formOptions' => ['action' => ['/ordenes/det-ordenes/editarcantidad']],
                         'inputType' => Editable::INPUT_TEXT,
                         'options' => [
                             'pluginOptions' => ['min' => 0, 'max' => 10000]
@@ -194,7 +172,7 @@ use yii\helpers\Url;
                     'hAlign' => 'right',
                     'vAlign' => 'middle',
                     'width' => '10%',
-                    'pageSummary' => true,
+                    'pageSummary' => false,
                     'filter' => false,
                 ],
                 [
@@ -213,7 +191,7 @@ use yii\helpers\Url;
                     'attribute' => 'descuento',
                     'editableOptions' => [
                         'asPopover' => false,
-                        'formOptions' => ['action' => ['/compras/det-compras/editardescuento']],
+                        'formOptions' => ['action' => ['/ordenes/det-ordenes/editardescuento']],
                         'inputType' => Editable::INPUT_TEXT,
                         'options' => [
                             'pluginOptions' => ['min' => 0, 'max' => 10000]
@@ -223,7 +201,7 @@ use yii\helpers\Url;
                     'hAlign' => 'right',
                     'vAlign' => 'middle',
                     'width' => '10%',
-                    'pageSummary' => true,
+                    'pageSummary' => false,
                     'filter' => false,
                 ],
                 [
@@ -307,7 +285,7 @@ use yii\helpers\Url;
                     ],
                     'urlCreator' => function ($action, $model) {
                         if ($action === 'delete') {
-                            $url = Url::to(['/compras/det-ordenes/delete', 'id_det_orden' => $model->id_det_orden, 'id_orden' => $model->id_orden]);
+                            $url = Url::to(['/ordenes/det-ordenes/delete', 'id_det_orden' => $model->id_det_orden, 'id_orden' => $model->id_orden]);
                             return $url;
                         }
                     }
